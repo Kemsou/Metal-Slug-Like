@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour {
     //FixedUpdate la doi tuong chiu tac dung vat ly
 
     private void FixedUpdate() {
-        float move = Input.GetAxis("Horizontal");
+        float move = Input.GetAxisRaw("Horizontal");
 
         charBody.velocity = new Vector2(move * maxSpeed, charBody.velocity.y);
 
