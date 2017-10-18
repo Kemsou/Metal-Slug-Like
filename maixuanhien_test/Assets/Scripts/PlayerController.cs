@@ -90,6 +90,12 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        doublejump = true;
+        grounded = false;
+    }
+
     //chuc nang ban
     void fireBullet() {
         if (Time.time > nextFire) {
