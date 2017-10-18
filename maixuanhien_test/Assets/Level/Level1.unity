@@ -2426,12 +2426,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1800009736}
+  - component: {fileID: 1800009740}
+  - component: {fileID: 1800009741}
   - component: {fileID: 1800009735}
   - component: {fileID: 1800009739}
   - component: {fileID: 1800009738}
   - component: {fileID: 1800009737}
-  - component: {fileID: 1800009740}
-  - component: {fileID: 1800009741}
   m_Layer: 0
   m_Name: Character
   m_TagString: Player
@@ -2526,7 +2526,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -2558,11 +2558,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 103cd76f9d47b4f4b957e325c50a5312, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 5
-  jumpHeight: 10
-  jumpPower: 300
+  maxSpeed: 8
+  jumpHeight: 20
+  fireRateBullet: 0.2
+  fireRateBeam: 2
   gunTip: {fileID: 2033730747}
   bullet: {fileID: 1286849677294986, guid: 0a1af5ebedc3989408e4334b302059da, type: 2}
+  beam: {fileID: 1744416318357550, guid: 776d4d6800fb1c0459acdd273e0f082e, type: 2}
 --- !u!114 &1800009741
 MonoBehaviour:
   m_ObjectHideFlags: 0

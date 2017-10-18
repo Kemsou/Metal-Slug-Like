@@ -6,17 +6,24 @@ public class PlayerController : MonoBehaviour {
 
     public float maxSpeed;
     public float jumpHeight;
-    public float jumpPower;
-
+    [SerializeField]
+    float fireRateBullet = 0.5f;
+    [SerializeField]
+    float fireRateBeam = 1.0f;
     bool facingRight;
     bool grounded;
     bool doublejump;
 
+
+
     //khai bao cac bien de ban
     public Transform gunTip;
     public GameObject bullet;
-    float fireRate = 0.5f;
-    float nextFire = 0;
+    public GameObject beam;
+
+
+    float nextFireBullet = 0;
+    float nextFireBeam = 0;
 
     Rigidbody2D charBody;
     Animator charAnimation;
@@ -25,7 +32,6 @@ public class PlayerController : MonoBehaviour {
     void Start() {
         charBody = GetComponent<Rigidbody2D>();
         charAnimation = GetComponent<Animator>();
-
         facingRight = true;
     }
 
@@ -73,6 +79,11 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetAxisRaw("Fire1") > 0) {
             fireBullet();
         }
+
+        if (Input.GetAxisRaw("Fire2") > 0)
+        {
+            fireBeam();
+        }
     }
 
     //xoay huong mat character
@@ -98,12 +109,31 @@ public class PlayerController : MonoBehaviour {
 
     //chuc nang ban
     void fireBullet() {
-        if (Time.time > nextFire) {
-            nextFire = Time.time + fireRate;
+        if (Time.time > nextFireBullet) {
+            nextFireBullet = Time.time + fireRateBullet;
             if (facingRight) {
                 Instantiate(bullet, gunTip.position, Quaternion.Euler(new Vector3(0, 0, 0)));
             } else {
                 Instantiate(bullet, gunTip.position, Quaternion.Euler(new Vector3(0, 0, 180)));
+            }
+        }
+    }
+
+
+    void fireBeam()
+    {
+        if (Time.time > nextFireBeam)
+        {
+            nextFireBeam = Time.time + fireRateBeam;
+            if (facingRight)
+            {
+                GameObject childBeam = Instantiate(beam, gunTip.position, Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject;
+                childBeam.transform.parent = gameObject.transform;
+            }
+            else
+            {
+                GameObject childBeam = Instantiate(beam, gunTip.position, Quaternion.Euler(new Vector3(0, 0, 180))) as GameObject;
+                childBeam.transform.parent = gameObject.transform;
             }
         }
     }
