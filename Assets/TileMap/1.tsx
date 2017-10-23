@@ -11,4 +11,18 @@
    <object id="1" x="0" y="0" width="70" height="38.6667"/>
   </objectgroup>
  </tile>
+ <tile id="95">
+  <objectgroup draworder="index">
+   <object id="1" x="0" y="0">
+    <polygon points="0,0 70,70 0,70"/>
+   </object>
+  </objectgroup>
+ </tile>
+ <tile id="105">
+  <objectgroup draworder="index">
+   <object id="1" x="70" y="0">
+    <polygon points="0,0 -70,70 0,70"/>
+   </object>
+  </objectgroup>
+ </tile>
 </tileset>
