@@ -12,8 +12,10 @@ public class PlayerController : MonoBehaviour {
     float fireRateBeam = 1.0f;
     [SerializeField]
     GameObject _gfxObject = null;
+    [SerializeField]
     public bool facingRight;
-    bool grounded;
+    [SerializeField]
+    public bool grounded;
     bool doublejump;
 
 
@@ -141,6 +143,7 @@ public class PlayerController : MonoBehaviour {
     //va cham mat dat
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.tag == "Ground") {
+            Debug.Log("sol");
             grounded = true;
         }
     }

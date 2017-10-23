@@ -10,13 +10,13 @@ public class PlayerHealth : MonoBehaviour {
     float currentHealth;
 
     public GameObject bloodEffect;
-    public Slider playerHealthSlider;
+    //public Slider playerHealthSlider;
 
 	// Use this for initialization
 	void Start () {
         currentHealth = maxHealth;
-        playerHealthSlider.maxValue = maxHealth;
-        playerHealthSlider.value = maxHealth;
+        //playerHealthSlider.maxValue = maxHealth;
+        //playerHealthSlider.value = maxHealth;
 	}
 	
 	// Update is called once per frame
@@ -29,7 +29,7 @@ public class PlayerHealth : MonoBehaviour {
             return;
         }
         currentHealth = currentHealth - damage;
-        playerHealthSlider.value = currentHealth;
+        //playerHealthSlider.value = currentHealth;
         if (currentHealth <= 0) {
             makeDead();
         }
