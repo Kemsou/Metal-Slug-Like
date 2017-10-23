@@ -43,3 +43,14 @@
 	.Nombre de projectiles par rafale
 	.Temps de pause entre chaque rafale
 
+	
+*******Boss*******
+
+- cadence et idle des tirs normaux et du tir de canon (int,float)
+
+- PV (int)
+
+- shield de son « cœur »(int)
+
+- timeurs des phases(int,float)
+
