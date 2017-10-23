@@ -64,8 +64,6 @@ public class LaserScript : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(this.transform.position, this.transform.right, currentLaserSize, layer_mask);
         if (hit.collider != null && hit.collider.transform.parent.GetComponent<EnemyController>().isBerserk)
         {
-            Debug.Log(hit.collider.transform.name);
-
             hit.collider.transform.parent.GetComponent<EnemyController>().makeDead();
         }
     }

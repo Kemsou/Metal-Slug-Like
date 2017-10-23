@@ -5,8 +5,8 @@ using UnityEngine;
 [System.Serializable]
 public class MultiDimensionalString
 {
+    [SerializeField]
     private string[] stringArray;
-    public string name;
 
     public MultiDimensionalString()
     {
