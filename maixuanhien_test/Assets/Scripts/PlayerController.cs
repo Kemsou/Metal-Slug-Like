@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour {
     public Transform pivotGunTip;
     public GameObject bullet;
     public GameObject beam;
-    
+
     private Quaternion rotation;
 
     float nextFireBullet = 0;
@@ -58,8 +58,8 @@ public class PlayerController : MonoBehaviour {
         changeOrientation(inputHorizontal, inputVertical);
 
         charBody.velocity = new Vector2(inputHorizontal * maxSpeed, charBody.velocity.y);
-        
-        
+
+
 
         charAnimation.SetFloat("speed", Mathf.Abs(inputHorizontal));
 
@@ -88,8 +88,7 @@ public class PlayerController : MonoBehaviour {
             fireBullet();
         }
 
-        if (Input.GetAxisRaw("Fire2") > 0)
-        {
+        if (Input.GetAxisRaw("Fire2") > 0) {
             fireBeam();
         }
     }
@@ -97,50 +96,40 @@ public class PlayerController : MonoBehaviour {
     //xoay huong mat character
     void changeOrientation(float inputHorizontal, float inputVertical) {
         Transform child = transform.GetChild(0);
-        if (inputHorizontal == 1 && inputVertical == 1)
-        {
+        if (inputHorizontal == 1 && inputVertical == 1) {
             rotation = Quaternion.Euler(new Vector3(0, 0, 45));
         }
-        if (inputHorizontal == 1 && inputVertical == 0)
-        {
+        if (inputHorizontal == 1 && inputVertical == 0) {
             rotation = Quaternion.Euler(new Vector3(0, 0, 0));
         }
-        if (inputHorizontal == 1 && inputVertical == -1)
-        {
+        if (inputHorizontal == 1 && inputVertical == -1) {
             rotation = Quaternion.Euler(new Vector3(0, 0, 315));
         }
-        if (inputHorizontal == 0 && inputVertical == 1)
-        {
+        if (inputHorizontal == 0 && inputVertical == 1) {
             rotation = Quaternion.Euler(new Vector3(0, 0, 90));
         }
-        if (inputHorizontal == 0 && inputVertical == -1)
-        {
+        if (inputHorizontal == 0 && inputVertical == -1) {
             rotation = Quaternion.Euler(new Vector3(0, 0, 270));
         }
-        if (inputHorizontal == -1 && inputVertical == 1)
-        {
+        if (inputHorizontal == -1 && inputVertical == 1) {
             rotation = Quaternion.Euler(new Vector3(0, 0, 135));
         }
-        if (inputHorizontal == -1 && inputVertical == 0)
-        {
+        if (inputHorizontal == -1 && inputVertical == 0) {
             rotation = Quaternion.Euler(new Vector3(0, 0, 180));
         }
-        if (inputHorizontal == -1 && inputVertical == -1)
-        {
+        if (inputHorizontal == -1 && inputVertical == -1) {
             rotation = Quaternion.Euler(new Vector3(0, 0, 225));
         }
         pivotGunTip.transform.rotation = rotation;
     }
 
-    void flip()
-    {
+    void flip() {
         facingRight = !facingRight;
         Vector2 scale = _gfxObject.transform.localScale;
         scale.x = scale.x * (-1);
         _gfxObject.transform.localScale = scale;
     }
 
-    //va cham mat dat
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.tag == "Ground") {
             Debug.Log("sol");
@@ -148,13 +137,11 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    void OnCollisionExit2D(Collision2D collision)
-    {
+    void OnCollisionExit2D(Collision2D collision) {
         doublejump = true;
         grounded = false;
     }
 
-    //chuc nang ban
     void fireBullet() {
         if (Time.time > nextFireBullet) {
             nextFireBullet = Time.time + fireRateBullet;
@@ -163,12 +150,9 @@ public class PlayerController : MonoBehaviour {
     }
 
 
-    void fireBeam()
-    {
-        if (Time.time > nextFireBeam)
-        {
+    void fireBeam() {
+        if (Time.time > nextFireBeam) {
             nextFireBeam = Time.time + fireRateBeam;
-
             GameObject childBeam = Instantiate(beam, gunTip.position, gunTip.rotation) as GameObject;
             childBeam.transform.parent = gunTip;
         }

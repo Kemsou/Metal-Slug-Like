@@ -81,6 +81,7 @@
     <Compile Include="Assets\Scripts\BulletHit.cs" />
     <Compile Include="Assets\Scripts\cameraFollow.cs" />
     <Compile Include="Assets\Scripts\DestroyMe.cs" />
+    <Compile Include="Assets\Scripts\EnemyBomer.cs" />
     <Compile Include="Assets\Scripts\EnemyController.cs" />
     <Compile Include="Assets\Scripts\EnemyDamage.cs" />
     <Compile Include="Assets\Scripts\EnemyHealth.cs" />
@@ -110,6 +111,7 @@
     <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TmxObject.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Galaxia Sprite Pack #1\README.txt" />
     <None Include="Assets\Tiled2Unity\Imported\Niveau_Clement.tiled2unity.xml" />
     <None Include="Assets\Tiled2Unity\Imported\_ReadMe.txt" />
     <None Include="Assets\Tiled2Unity\License.txt" />
