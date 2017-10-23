@@ -72,7 +72,6 @@ public class EnemyController : MonoBehaviour {
 
     public void addDamage(float damage)
     {
-        Debug.Log("currentShield : " + currentShield);
         if (currentShield > 0)
         {
             currentShield = currentShield - damage;
@@ -89,6 +88,7 @@ public class EnemyController : MonoBehaviour {
     {
         berserk = true;
         speed = speedBerserk;
+        enemyShieldSlider.gameObject.SetActive(false);
     }
 
     public void makeDead()

@@ -18,6 +18,8 @@ public class LaserScript : MonoBehaviour
     private float currentLaserSize;
     private float maxLaserSize;
 
+    private int layer_mask;
+
     void Start()
     {
         Vector2 laserDirection = this.GetLaserDirection();
@@ -32,6 +34,8 @@ public class LaserScript : MonoBehaviour
 
         maxLaserSize = 40f;
         currentLaserSize = 0;
+
+        layer_mask  = LayerMask.GetMask("enemy");
     }
 
     void Update()
@@ -57,12 +61,12 @@ public class LaserScript : MonoBehaviour
 
 
         // Raycast at the right
-        RaycastHit2D hit = Physics2D.Raycast(this.transform.position, this.transform.right, currentLaserSize);
-        if (hit.collider != null && hit.transform.tag == "ShootTable")
+        RaycastHit2D hit = Physics2D.Raycast(this.transform.position, this.transform.right, currentLaserSize, layer_mask);
+        if (hit.collider != null && hit.collider.transform.parent.GetComponent<EnemyController>().isBerserk)
         {
-            Debug.Log("touche");
-            hit.transform.parent.GetComponent<EnemyController>().makeDead();
-            //currentLaserSize = Vector2.Distance(hit.point, this.transform.position);
+            Debug.Log(hit.collider.transform.name);
+
+            hit.collider.transform.parent.GetComponent<EnemyController>().makeDead();
         }
     }
 
