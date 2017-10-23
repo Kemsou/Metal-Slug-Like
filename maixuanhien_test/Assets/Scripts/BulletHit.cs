@@ -23,7 +23,7 @@ public class BulletHit : MonoBehaviour {
     }
 
     void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.gameObject.tag == "ShootTable") {
+        if (collision.gameObject.tag == "ShootTable" && !collision.gameObject.transform.parent.GetComponent<EnemyController>().isBerserk) {
             proCon.removeForce();
             Instantiate(bulletExplosion, transform.position, transform.rotation);
             Destroy(gameObject);
@@ -35,7 +35,7 @@ public class BulletHit : MonoBehaviour {
     }
 
     private void OnTriggerStay2D(Collider2D collision) {
-        if (collision.gameObject.tag == "ShootTable") {
+        if (collision.gameObject.tag == "ShootTable" && !collision.gameObject.transform.parent.GetComponent<EnemyController>().isBerserk) {
             proCon.removeForce();
             Instantiate(bulletExplosion, transform.position, transform.rotation);
             Destroy(gameObject);
