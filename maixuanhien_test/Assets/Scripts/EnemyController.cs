@@ -32,6 +32,14 @@ public class EnemyController : MonoBehaviour {
     protected float nextFlip = 0f;
     protected bool canFlip = true;
 
+    public bool isBerserk
+    {
+        get
+        {
+            return berserk;
+        }
+    }
+
     private void Awake() {
         enemyBody = GetComponent<Rigidbody2D>();
         enemyAnimator = _gfxObject.GetComponentInChildren<Animator>();
@@ -83,9 +91,9 @@ public class EnemyController : MonoBehaviour {
         speed = speedBerserk;
     }
 
-    /*protected void makeDead()
+    public void makeDead()
     {
         Destroy(gameObject);
         Instantiate(enemyShieldEF, transform.position, transform.rotation);
-    }*/
+    }
 }
