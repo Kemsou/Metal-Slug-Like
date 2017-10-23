@@ -28,7 +28,7 @@ public class BulletHit : MonoBehaviour {
             Instantiate(bulletExplosion, transform.position, transform.rotation);
             Destroy(gameObject);
             if (collision.gameObject.layer == LayerMask.NameToLayer("enemy")) {
-                EnemiHealth hurtEnemy = collision.gameObject.GetComponent<EnemiHealth>();
+                EnemyController hurtEnemy = collision.gameObject.GetComponentInParent<EnemyController>();
                 hurtEnemy.addDamage(weaponDamage);
             }
         }
@@ -40,7 +40,7 @@ public class BulletHit : MonoBehaviour {
             Instantiate(bulletExplosion, transform.position, transform.rotation);
             Destroy(gameObject);
             if (collision.gameObject.layer == LayerMask.NameToLayer("enemy")) {
-                EnemiHealth hurtEnemy = collision.gameObject.GetComponent<EnemiHealth>();
+                EnemyController hurtEnemy = collision.gameObject.GetComponentInParent<EnemyController>();
                 hurtEnemy.addDamage(weaponDamage);
             }
         }
