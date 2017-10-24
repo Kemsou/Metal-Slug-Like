@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-
+        
     }
 
     //FixedUpdate la doi tuong chiu tac dung vat ly
@@ -59,25 +59,20 @@ public class PlayerController : MonoBehaviour {
 
         charBody.velocity = new Vector2(inputHorizontal * maxSpeed, charBody.velocity.y);
 
-
+        grounded = IsGrounded();
 
         charAnimation.SetFloat("speed", Mathf.Abs(inputHorizontal));
 
         if (Input.GetKeyDown(KeyCode.Space)) {
             if (grounded) {
                 grounded = false;
-                //charBody.velocity = new Vector2(charBody.velocity.x, 0);
                 charBody.velocity = new Vector2(charBody.velocity.x, jumpHeight);
-                //charBody.AddForce(new Vector2(0, jumpHeight), ForceMode2D.Impulse);
-                //charBody.AddForce(Vector2.up * jumpPower);
                 doublejump = true;
             } else {
                 if (doublejump) {
                     doublejump = false;
                     charBody.velocity = new Vector2(charBody.velocity.x, 0);
                     charBody.velocity = new Vector2(charBody.velocity.x, jumpHeight * (float)0.75);
-                    //charBody.AddForce(new Vector2(0, jumpHeight), ForceMode2D.Impulse);
-                    //charBody.AddForce(Vector2.up * jumpPower);
                 }
             }
 
@@ -130,18 +125,6 @@ public class PlayerController : MonoBehaviour {
         _gfxObject.transform.localScale = scale;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision) {
-        if (collision.gameObject.tag == "Ground") {
-            Debug.Log("sol");
-            grounded = true;
-        }
-    }
-
-    void OnCollisionExit2D(Collision2D collision) {
-        doublejump = true;
-        grounded = false;
-    }
-
     void fireBullet() {
         if (Time.time > nextFireBullet) {
             nextFireBullet = Time.time + fireRateBullet;
@@ -156,5 +139,23 @@ public class PlayerController : MonoBehaviour {
             GameObject childBeam = Instantiate(beam, gunTip.position, gunTip.rotation) as GameObject;
             childBeam.transform.parent = gunTip;
         }
+    }
+
+    bool IsGrounded()
+    {
+        bool onGround = false;
+
+        Vector2 raycastDirection = Vector2.down;
+        BoxCollider2D hitbox = GetComponent<BoxCollider2D>();
+        Vector3 raycastOrigine = new Vector3(hitbox.transform.position.x, hitbox.transform.position.y - (hitbox.size.y / 2) + 0.1f, 0);
+
+        RaycastHit2D hit = Physics2D.Raycast(raycastOrigine, raycastDirection, 0.3f, LayerMask.GetMask("world"));
+        if (hit.collider != null && hit.collider.tag == "Ground")
+        {
+            onGround = true;
+            doublejump = true;
+        }
+
+        return onGround;
     }
 }

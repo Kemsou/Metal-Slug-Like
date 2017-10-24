@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212375507278642698}
   - component: {fileID: 61473902129316312}
   - component: {fileID: 251872905602585202}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bridgeBlack
   m_TagString: Ground
   m_Icon: {fileID: 0}
