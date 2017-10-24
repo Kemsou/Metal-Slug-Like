@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tileset name="spritesheetModifie" tilewidth="70" tileheight="70" spacing="2" tilecount="156" columns="12">
- <image source="spritesheetModifie.png" width="914" height="936"/>
+ <image source="spritesheetModifie - Scaled.png" width="914" height="936"/>
  <tile id="22">
   <objectgroup draworder="index">
    <object id="1" x="0" y="0" width="70" height="70"/>
