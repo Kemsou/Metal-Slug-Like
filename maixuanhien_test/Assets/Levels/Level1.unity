@@ -804,7 +804,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!1001 &1099707953
 Prefab:
   m_ObjectHideFlags: 0
@@ -814,11 +814,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4427842820870206, guid: a9969a60aa244e44884e614c77259be1, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -18.4
+      value: -19.2
       objectReference: {fileID: 0}
     - target: {fileID: 4427842820870206, guid: a9969a60aa244e44884e614c77259be1, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 16.3
+      value: 17.1
       objectReference: {fileID: 0}
     - target: {fileID: 4427842820870206, guid: a9969a60aa244e44884e614c77259be1, type: 2}
       propertyPath: m_LocalPosition.z
@@ -846,11 +846,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4427842820870206, guid: a9969a60aa244e44884e614c77259be1, type: 2}
       propertyPath: m_LocalScale.x
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4427842820870206, guid: a9969a60aa244e44884e614c77259be1, type: 2}
       propertyPath: m_LocalScale.y
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1328649440023336, guid: a9969a60aa244e44884e614c77259be1, type: 2}
       propertyPath: m_TagString
