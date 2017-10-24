@@ -24,8 +24,12 @@ MonoBehaviour:
   m_MinSize: {x: 950, y: 492}
 =======
   m_RootView: {fileID: 4}
+<<<<<<< HEAD
   m_MinSize: {x: 950, y: 471}
 >>>>>>> master
+=======
+  m_MinSize: {x: 950, y: 492}
+>>>>>>> Fix ground raycast (2 raycast)
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -103,11 +107,15 @@ MonoBehaviour:
     y: 0
     width: 429
     height: 1068
-  m_MinSize: {x: 275, y: 171}
-  m_MaxSize: {x: 4004, y: 8021}
+  m_MinSize: {x: 277, y: 192}
+  m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
+<<<<<<< HEAD
   controlID: 1779
 >>>>>>> master
+=======
+  controlID: 134
+>>>>>>> Fix ground raycast (2 raycast)
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -183,8 +191,12 @@ MonoBehaviour:
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
+<<<<<<< HEAD
   m_LastLoadedLayoutName: 2 by 3
 >>>>>>> master
+=======
+  m_LastLoadedLayoutName: 
+>>>>>>> Fix ground raycast (2 raycast)
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -221,11 +233,15 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 1068
-  m_MinSize: {x: 915, y: 421}
-  m_MaxSize: {x: 22014, y: 10021}
+  m_MinSize: {x: 917, y: 442}
+  m_MaxSize: {x: 22012, y: 10021}
   vertical: 0
+<<<<<<< HEAD
   controlID: 681
 >>>>>>> master
+=======
+  controlID: 41
+>>>>>>> Fix ground raycast (2 raycast)
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -301,11 +317,15 @@ MonoBehaviour:
     y: 0
     width: 908
     height: 1068
-  m_MinSize: {x: 202, y: 421}
-  m_MaxSize: {x: 4002, y: 8021}
+  m_MinSize: {x: 202, y: 442}
+  m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
+<<<<<<< HEAD
   controlID: 682
 >>>>>>> master
+=======
+  controlID: 42
+>>>>>>> Fix ground raycast (2 raycast)
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -404,8 +424,8 @@ MonoBehaviour:
     y: 0
     width: 429
     height: 712
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 277, y: 71}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -457,8 +477,8 @@ MonoBehaviour:
     y: 548
     width: 908
     height: 520
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -526,9 +546,9 @@ MonoBehaviour:
     height: 1047
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 4a290000
-    m_LastClickedID: 0
-    m_ExpandedIDs: 04f8ffff00000000
+    m_SelectedIDs: c4fbffff
+    m_LastClickedID: -1084
+    m_ExpandedIDs: 18fcffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -577,7 +597,7 @@ MonoBehaviour:
     y: 91
     width: 427
     height: 691
-  m_ScrollPosition: {x: 0, y: 0}
+  m_ScrollPosition: {x: 0, y: 55.95508}
   m_InspectorMode: 0
   m_PreviewResizer:
     m_CachedPref: -160
@@ -717,6 +737,7 @@ MonoBehaviour:
     m_SearchArea: 0
     m_Folders:
 <<<<<<< HEAD
+<<<<<<< HEAD
     - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 64
@@ -729,11 +750,19 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/Prefabs
 >>>>>>> master
+=======
+    - Assets/Scripts
+  m_ViewMode: 1
+  m_StartGridSize: 64
+  m_LastFolders:
+  - Assets/Scripts
+>>>>>>> Fix ground raycast (2 raycast)
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\M2Gamagora\Projet_Metal\Metal-Slug-Like\maixuanhien_test
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
     m_SelectedIDs: 44280000
     m_LastClickedID: 10308
@@ -743,6 +772,11 @@ MonoBehaviour:
     m_LastClickedID: 10398
     m_ExpandedIDs: 0000000056280000da280000ba2b0000bc2b0000be2b0000c02b0000c22b000000ca9a3bffffff7f
 >>>>>>> master
+=======
+    m_SelectedIDs: 4a270000
+    m_LastClickedID: 10058
+    m_ExpandedIDs: 00000000be26000054270000f02a0000f22a0000f42a0000f62a0000f82a000000ca9a3bffffff7f
+>>>>>>> Fix ground raycast (2 raycast)
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -771,10 +805,14 @@ MonoBehaviour:
     m_SelectedIDs: 
     m_LastClickedID: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000ca2700004e280000ac280000302b0000322b0000342b0000362b0000382b000000ca9a3bffffff7f
 =======
     m_ExpandedIDs: 0000000056280000da28000038290000ba2b0000bc2b0000be2b0000c02b0000c22b000000ca9a3bffffff7f
 >>>>>>> master
+=======
+    m_ExpandedIDs: 00000000be26000054270000f02a0000f22a0000f42a0000f62a0000f82a0000
+>>>>>>> Fix ground raycast (2 raycast)
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -974,12 +1012,17 @@ MonoBehaviour:
     width: 906
     height: 527
   m_SceneLighting: 1
+<<<<<<< HEAD
   lastFramingTime: 529.929246833359
 >>>>>>> master
+=======
+  lastFramingTime: 221.2118370920667
+>>>>>>> Fix ground raycast (2 raycast)
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD
 <<<<<<< HEAD
     m_Target: {x: -4.8386908, y: 2.169554, z: 0}
     speed: 2
@@ -989,6 +1032,11 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 2.631706, y: 1.7628384, z: 0}
 >>>>>>> master
+=======
+    m_Target: {x: -5.58, y: 1.92, z: 0}
+    speed: 2
+    m_Value: {x: -5.58, y: 1.92, z: 0}
+>>>>>>> Fix ground raycast (2 raycast)
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -1016,6 +1064,7 @@ MonoBehaviour:
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: 4.4697595
     speed: 2
     m_Value: 4.4697595
@@ -1024,6 +1073,11 @@ MonoBehaviour:
     speed: 2
     m_Value: 18.848125
 >>>>>>> master
+=======
+    m_Target: 6.55356
+    speed: 2
+    m_Value: 6.55356
+>>>>>>> Fix ground raycast (2 raycast)
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1033,4 +1087,4 @@ MonoBehaviour:
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
   m_LastLockedObject: {fileID: 0}
-  m_ViewIsLockedToObject: 0
+  m_ViewIsLockedToObject: 1

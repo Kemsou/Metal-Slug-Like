@@ -165,15 +165,16 @@ public class PlayerController : MonoBehaviour {
 
         Vector2 raycastDirection = Vector2.down;
         BoxCollider2D hitbox = GetComponent<BoxCollider2D>();
-        Vector3 raycastOrigine = new Vector3(hitbox.transform.position.x, hitbox.transform.position.y - (hitbox.size.y / 2) + 0.1f, 0);
+        Vector3 raycastOrigine1 = new Vector3(hitbox.transform.position.x - (hitbox.size.x / 2) - 0.1f, hitbox.transform.position.y - (hitbox.size.y / 2) + 0.1f, 0);
+        Vector3 raycastOrigine2 = new Vector3(hitbox.transform.position.x + (hitbox.size.x / 2) - 0.1f, hitbox.transform.position.y - (hitbox.size.y / 2) + 0.1f, 0);
 
-        RaycastHit2D hit = Physics2D.Raycast(raycastOrigine, raycastDirection, 0.3f, LayerMask.GetMask("world"));
-        if (hit.collider != null && hit.collider.tag == "Ground")
+        RaycastHit2D hit1 = Physics2D.Raycast(raycastOrigine1, raycastDirection, 0.3f, LayerMask.GetMask("world"));
+        RaycastHit2D hit2 = Physics2D.Raycast(raycastOrigine2, raycastDirection, 0.3f, LayerMask.GetMask("world"));
+        if ((hit1.collider != null && hit1.collider.tag == "Ground") || ((hit2.collider != null && hit2.collider.tag == "Ground")))
         { 
             onGround = true;
             doublejump = true;
         }
-        Debug.DrawRay(raycastOrigine, raycastDirection, Color.green, 0.3f);
 
         return onGround;
     }
