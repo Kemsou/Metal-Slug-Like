@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ProjectileControler : MonoBehaviour {
 
-    public float bulletSpeed;
-
+    [SerializeField]
+    float bulletSpeed;
     Rigidbody2D bulletBody;
     
 
