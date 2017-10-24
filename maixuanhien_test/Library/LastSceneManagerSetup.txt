@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Levels/Level_tuto_mich.unity
+- path: Assets/Levels/LevelFinal_Elric.unity
   isLoaded: 1
   isActive: 1
