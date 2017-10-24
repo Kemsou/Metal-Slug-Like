@@ -19,7 +19,6 @@ public class SpawnerController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        //ennemisArray = new MultiDimensionalString[3];
         currentWave = 0;
         timer = 0;
 	}
@@ -68,6 +67,7 @@ public class SpawnerController : MonoBehaviour {
 
     void TriggerSpawner()
     {
+        Debug.Log("trigger");
         currentWave = 1;
         timer = 0;
     }

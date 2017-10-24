@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 114597142282982312}
   - component: {fileID: 114293326522138546}
   - component: {fileID: 50289650319721134}
-  - component: {fileID: 58019907945840378}
+  - component: {fileID: 61235066092680046}
   m_Layer: 0
   m_Name: Character
   m_TagString: Player
@@ -152,8 +152,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &58019907945840378
-CircleCollider2D:
+--- !u!61 &61235066092680046
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -164,9 +164,19 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.8}
+  m_Offset: {x: -0.0935266, y: -0.14443254}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.37
+  m_Size: {x: 0.8778863, y: 2.0760074}
+  m_EdgeRadius: 0
 --- !u!95 &95236745052645708
 Animator:
   serializedVersion: 3
@@ -216,9 +226,10 @@ MonoBehaviour:
   _gfxObject: {fileID: 1528651988979424}
   facingRight: 0
   grounded: 0
+  manette: 0
   gunTip: {fileID: 4313082864964146}
   pivotGunTip: {fileID: 4686542463537574}
-  bullet: {fileID: 1286849677294986, guid: 0a1af5ebedc3989408e4334b302059da, type: 2}
+  bullet: {fileID: 1880808093566080, guid: 0a1af5ebedc3989408e4334b302059da, type: 2}
   beam: {fileID: 1654542968207190, guid: 6232e0e93af0bc542a617b06a64ad751, type: 2}
 --- !u!212 &212337312388814590
 SpriteRenderer:

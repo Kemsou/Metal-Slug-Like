@@ -17,6 +17,10 @@ public class PlayerController : MonoBehaviour {
     [SerializeField]
     public bool grounded;
     bool doublejump;
+    [SerializeField]
+    private bool manette;
+    private float inputHorizontal;
+    private float inputVertical;
 
 
 
@@ -40,6 +44,9 @@ public class PlayerController : MonoBehaviour {
         charAnimation = _gfxObject.GetComponent<Animator>();
         facingRight = true;
         rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+        
+        inputHorizontal = 0;
+        inputVertical = 0;
     }
 
     // Update is called once per frame
@@ -50,12 +57,23 @@ public class PlayerController : MonoBehaviour {
     //FixedUpdate la doi tuong chiu tac dung vat ly
 
     private void FixedUpdate() {
-        float inputHorizontal = Input.GetAxisRaw("Horizontal");
-        float inputVertical = Input.GetAxisRaw("Vertical");
+
+        /*if (manette)
+        {
+            inputHorizontal = Input.GetAxisRaw("Horizontal");
+            inputVertical = Input.GetAxisRaw("Vertical");
+            changeOrientation(inputHorizontal, inputVertical);
+        }
+        else
+        {*/
+            inputHorizontal = Input.GetAxisRaw("Horizontal");
+            inputVertical = Input.GetAxisRaw("Vertical");
+            changeOrientation(inputHorizontal, inputVertical);
+        //}
+        
         if ((facingRight && inputHorizontal == -1) || (!facingRight && inputHorizontal == 1))
             flip();
-        Vector2 vecDirection = new Vector2(inputHorizontal, inputVertical);
-        changeOrientation(inputHorizontal, inputVertical);
+        
 
         charBody.velocity = new Vector2(inputHorizontal * maxSpeed, charBody.velocity.y);
 
@@ -147,11 +165,13 @@ public class PlayerController : MonoBehaviour {
 
         Vector2 raycastDirection = Vector2.down;
         BoxCollider2D hitbox = GetComponent<BoxCollider2D>();
-        Vector3 raycastOrigine = new Vector3(hitbox.transform.position.x, hitbox.transform.position.y - (hitbox.size.y / 2) + 0.1f, 0);
+        Vector3 raycastOrigine1 = new Vector3(hitbox.transform.position.x - (hitbox.size.x / 2) - 0.1f, hitbox.transform.position.y - (hitbox.size.y / 2) + 0.1f, 0);
+        Vector3 raycastOrigine2 = new Vector3(hitbox.transform.position.x + (hitbox.size.x / 2) - 0.1f, hitbox.transform.position.y - (hitbox.size.y / 2) + 0.1f, 0);
 
-        RaycastHit2D hit = Physics2D.Raycast(raycastOrigine, raycastDirection, 0.3f, LayerMask.GetMask("world"));
-        if (hit.collider != null && hit.collider.tag == "Ground")
-        {
+        RaycastHit2D hit1 = Physics2D.Raycast(raycastOrigine1, raycastDirection, 0.3f, LayerMask.GetMask("world"));
+        RaycastHit2D hit2 = Physics2D.Raycast(raycastOrigine2, raycastDirection, 0.3f, LayerMask.GetMask("world"));
+        if ((hit1.collider != null && hit1.collider.tag == "Ground") || ((hit2.collider != null && hit2.collider.tag == "Ground")))
+        { 
             onGround = true;
             doublejump = true;
         }
