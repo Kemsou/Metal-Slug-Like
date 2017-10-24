@@ -1269,6 +1269,17 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+    - target: {fileID: 114293326522138546, guid: 46f221d71665450419bece3bcfdaa6c8,
+        type: 2}
+      propertyPath: playerHealthSlider
+      value: 
+      objectReference: {fileID: 1694971914}
+=======
+>>>>>>> Stashed changes
     - target: {fileID: 114597142282982312, guid: 46f221d71665450419bece3bcfdaa6c8,
         type: 2}
       propertyPath: manette
@@ -1289,6 +1300,7 @@ Prefab:
       propertyPath: m_Offset.y
       value: -0.2
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 114597142282982312, guid: 46f221d71665450419bece3bcfdaa6c8,
         type: 2}
       propertyPath: maxSpeed
@@ -1341,6 +1353,14 @@ Prefab:
       propertyPath: playerHealthSlider
       value: 
       objectReference: {fileID: 735506282}
+=======
+<<<<<<< Updated upstream
+=======
+>>>>>>> master
+=======
+>>>>>>> parent of 5d624a6... Fix isGrounded
+>>>>>>> Stashed changes
+>>>>>>> d65c31365e08a9a83f0d3ec3cef45bb9b4068acf
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 46f221d71665450419bece3bcfdaa6c8, type: 2}
   m_IsPrefabParent: 0
@@ -2988,7 +3008,7 @@ GameObject:
   - component: {fileID: 2038586757}
   - component: {fileID: 2038586760}
   - component: {fileID: 2038586761}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: DeadBush
   m_TagString: ShootTable
   m_Icon: {fileID: 0}
