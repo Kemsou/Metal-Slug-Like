@@ -1269,10 +1269,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114293326522138546, guid: 46f221d71665450419bece3bcfdaa6c8, type: 2}
+    - target: {fileID: 114293326522138546, guid: 46f221d71665450419bece3bcfdaa6c8,
+        type: 2}
       propertyPath: playerHealthSlider
       value: 
-      objectReference: {fileID: 1694971914}
+      objectReference: {fileID: 0}
     - target: {fileID: 114597142282982312, guid: 46f221d71665450419bece3bcfdaa6c8,
         type: 2}
       propertyPath: manette
@@ -1680,6 +1681,28 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 58d2f617e9566074d809f70ef30eb805, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &946134454 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1492526090448090, guid: 46f221d71665450419bece3bcfdaa6c8,
+    type: 2}
+  m_PrefabInternal: {fileID: 720219725}
+--- !u!95 &946134455
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 946134454}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 796cb3fb100a7e84bafb1739c4ea2475, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1015834261
 GameObject:
   m_ObjectHideFlags: 0
