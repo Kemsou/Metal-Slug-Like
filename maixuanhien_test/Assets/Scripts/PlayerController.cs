@@ -95,10 +95,12 @@ public class PlayerController : MonoBehaviour {
         }
 
         if ((!manette && Input.GetAxis("Fire1") > 0) || (manette && Input.GetAxis("Trigger") > 0.5)) {
+            nextFireBeam = Time.time + fireRateBullet;
             fireBullet();
         }
 
         if ((!manette && Input.GetAxis("Fire2") > 0) || (manette && Input.GetAxis("Trigger") < -0.5)) {
+            nextFireBullet = Time.time + fireRateBeam;
             fireBeam();
         }
     }
