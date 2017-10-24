@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Levels/Level1.unity
-=======
-- path: Assets/Levels/Level_tuto_mich.unity
->>>>>>> d65c31365e08a9a83f0d3ec3cef45bb9b4068acf
+- path: Assets/Levels/Level0.unity
   isLoaded: 1
   isActive: 1
