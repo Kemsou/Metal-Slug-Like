@@ -26,6 +26,9 @@ public class PlayerController : MonoBehaviour {
     public Transform pivotGunTip;
     public GameObject bullet;
     public GameObject beam;
+    [SerializeField]
+    private float durationBeam;
+    private float timerBeam;
 
     private Quaternion rotation;
 
@@ -44,6 +47,7 @@ public class PlayerController : MonoBehaviour {
 
         inputHorizontal = 0;
         inputVertical = 0;
+        timerBeam = 0;
     }
 
     private void FixedUpdate() {
@@ -66,10 +70,24 @@ public class PlayerController : MonoBehaviour {
             inputVertical = Input.GetAxisRaw("Vertical");
         }
 
-        changeOrientation(inputHorizontal, inputVertical);
-
-        if ((facingRight && inputHorizontal == -1) || (!facingRight && inputHorizontal == 1))
-            flip();
+        if (timerBeam == 0)
+        {
+            changeOrientation(inputHorizontal, inputVertical);
+            if ((facingRight && inputHorizontal == -1) || (!facingRight && inputHorizontal == 1))
+            {
+                flip();
+            }
+        }
+        else if (timerBeam > 0 && timerBeam < durationBeam * 50)
+        {
+            timerBeam++;
+        }
+        else if (timerBeam >= durationBeam * 50)
+        {
+            timerBeam = 0;
+        }
+        
+        
 
 
         if (!Input.GetButton("Stop")) {
@@ -92,37 +110,21 @@ public class PlayerController : MonoBehaviour {
             }
 
         }
-<<<<<<< HEAD
 
         if ((!manette && Input.GetAxis("Fire1") > 0) || (manette && Input.GetAxis("Trigger") > 0.5)) {
-            nextFireBeam = Time.time + fireRateBullet;
-=======
-        
-        if ((!manette && Input.GetAxis("Fire1") > 0) || (manette && Input.GetAxis("Trigger") > 0.5))
-        {
->>>>>>> master
             fireBullet();
         }
 
         if ((!manette && Input.GetAxis("Fire2") > 0) || (manette && Input.GetAxis("Trigger") < -0.5)) {
-            nextFireBullet = Time.time + fireRateBeam;
+            nextFireBullet = Time.time + durationBeam;
             fireBeam();
         }
     }
-<<<<<<< HEAD
-
-    void changeOrientation(float inputHorizontal, float inputVertical) {
-        Transform child = transform.GetChild(0);
-
-        if (inputHorizontal == 1 && inputVertical == 1) {
-=======
-    
     void changeOrientation(float inputHorizontal, float inputVertical)
     {
         Transform child = transform.GetChild(0);
         if (inputHorizontal == 1 && inputVertical == 1)
         {
->>>>>>> master
             rotation = Quaternion.Euler(new Vector3(0, 0, 45));
         }
         if (inputHorizontal == 1 && inputVertical == 0) {
@@ -166,9 +168,11 @@ public class PlayerController : MonoBehaviour {
 
     void fireBeam() {
         if (Time.time > nextFireBeam) {
+            timerBeam++;
             nextFireBeam = Time.time + fireRateBeam;
             GameObject childBeam = Instantiate(beam, gunTip.position, gunTip.rotation) as GameObject;
             childBeam.transform.parent = gunTip;
+            childBeam.gameObject.GetComponent<DestroyMe>().aliveTime = durationBeam;
         }
     }
 

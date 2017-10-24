@@ -108,16 +108,6 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
---- !u!4 &48769832 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4313082864964146, guid: 46f221d71665450419bece3bcfdaa6c8,
-    type: 2}
-  m_PrefabInternal: {fileID: 720219725}
---- !u!1 &49659343 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1528651988979424, guid: 46f221d71665450419bece3bcfdaa6c8,
-    type: 2}
-  m_PrefabInternal: {fileID: 720219725}
 --- !u!1001 &54135325
 Prefab:
   m_ObjectHideFlags: 0
@@ -204,11 +194,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!4 &108228019 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4686542463537574, guid: 46f221d71665450419bece3bcfdaa6c8,
-    type: 2}
-  m_PrefabInternal: {fileID: 720219725}
 --- !u!1001 &111354169
 Prefab:
   m_ObjectHideFlags: 0
@@ -216,26 +201,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114309433250304584, guid: 1224ad571002670448e1857ee7e3a67c,
-        type: 2}
-      propertyPath: ennemisArray.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114309433250304584, guid: 1224ad571002670448e1857ee7e3a67c,
-        type: 2}
-      propertyPath: ennemisArray.Array.data[0].stringArray.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114309433250304584, guid: 1224ad571002670448e1857ee7e3a67c,
-        type: 2}
-      propertyPath: ennemisArray.Array.data[1].stringArray.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114309433250304584, guid: 1224ad571002670448e1857ee7e3a67c,
-        type: 2}
-      propertyPath: ennemisArray.Array.data[2].stringArray.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4479105007043394, guid: 1224ad571002670448e1857ee7e3a67c, type: 2}
       propertyPath: m_LocalPosition.x
       value: 21.39
@@ -267,71 +232,6 @@ Prefab:
     - target: {fileID: 4479105007043394, guid: 1224ad571002670448e1857ee7e3a67c, type: 2}
       propertyPath: m_RootOrder
       value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 1983414223376590, guid: 1224ad571002670448e1857ee7e3a67c, type: 2}
-      propertyPath: m_Name
-      value: Spawner
-      objectReference: {fileID: 0}
-    - target: {fileID: 61515824091660666, guid: 1224ad571002670448e1857ee7e3a67c,
-        type: 2}
-      propertyPath: m_Offset.x
-      value: -24.26
-      objectReference: {fileID: 0}
-    - target: {fileID: 114309433250304584, guid: 1224ad571002670448e1857ee7e3a67c,
-        type: 2}
-      propertyPath: delay
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114309433250304584, guid: 1224ad571002670448e1857ee7e3a67c,
-        type: 2}
-      propertyPath: kamikaze
-      value: 
-      objectReference: {fileID: 1673305870468984, guid: 0e30468882ff07b4f92ac2eb9eda947e,
-        type: 2}
-    - target: {fileID: 114309433250304584, guid: 1224ad571002670448e1857ee7e3a67c,
-        type: 2}
-      propertyPath: ennemisArray.Array.data[0].stringArray.Array.data[0]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114309433250304584, guid: 1224ad571002670448e1857ee7e3a67c,
-        type: 2}
-      propertyPath: ennemisArray.Array.data[0].stringArray.Array.data[1]
-      value: kamikaze
-      objectReference: {fileID: 0}
-    - target: {fileID: 114309433250304584, guid: 1224ad571002670448e1857ee7e3a67c,
-        type: 2}
-      propertyPath: ennemisArray.Array.data[0].stringArray.Array.data[2]
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114309433250304584, guid: 1224ad571002670448e1857ee7e3a67c,
-        type: 2}
-      propertyPath: ennemisArray.Array.data[1].stringArray.Array.data[0]
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114309433250304584, guid: 1224ad571002670448e1857ee7e3a67c,
-        type: 2}
-      propertyPath: ennemisArray.Array.data[1].stringArray.Array.data[1]
-      value: kamikaze
-      objectReference: {fileID: 0}
-    - target: {fileID: 114309433250304584, guid: 1224ad571002670448e1857ee7e3a67c,
-        type: 2}
-      propertyPath: ennemisArray.Array.data[1].stringArray.Array.data[2]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114309433250304584, guid: 1224ad571002670448e1857ee7e3a67c,
-        type: 2}
-      propertyPath: ennemisArray.Array.data[2].stringArray.Array.data[0]
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114309433250304584, guid: 1224ad571002670448e1857ee7e3a67c,
-        type: 2}
-      propertyPath: ennemisArray.Array.data[2].stringArray.Array.data[1]
-      value: kamikaze
-      objectReference: {fileID: 0}
-    - target: {fileID: 114309433250304584, guid: 1224ad571002670448e1857ee7e3a67c,
-        type: 2}
-      propertyPath: ennemisArray.Array.data[2].stringArray.Array.data[2]
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1224ad571002670448e1857ee7e3a67c, type: 2}
@@ -394,7 +294,7 @@ GameObject:
   - component: {fileID: 124155970}
   - component: {fileID: 124155974}
   - component: {fileID: 124155973}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: TombStone
   m_TagString: ShootTable
   m_Icon: {fileID: 0}
@@ -1100,8 +1000,8 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1273,79 +1173,12 @@ Prefab:
         type: 2}
       propertyPath: playerHealthSlider
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 735506282}
     - target: {fileID: 114597142282982312, guid: 46f221d71665450419bece3bcfdaa6c8,
         type: 2}
       propertyPath: manette
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 61235066092680046, guid: 46f221d71665450419bece3bcfdaa6c8,
-        type: 2}
-      propertyPath: m_Size.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 61235066092680046, guid: 46f221d71665450419bece3bcfdaa6c8,
-        type: 2}
-      propertyPath: m_Size.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 61235066092680046, guid: 46f221d71665450419bece3bcfdaa6c8,
-        type: 2}
-      propertyPath: m_Offset.y
-      value: -0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114597142282982312, guid: 46f221d71665450419bece3bcfdaa6c8,
-        type: 2}
-      propertyPath: maxSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114597142282982312, guid: 46f221d71665450419bece3bcfdaa6c8,
-        type: 2}
-      propertyPath: jumpHeight
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 114597142282982312, guid: 46f221d71665450419bece3bcfdaa6c8,
-        type: 2}
-      propertyPath: fireRateBullet
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114597142282982312, guid: 46f221d71665450419bece3bcfdaa6c8,
-        type: 2}
-      propertyPath: fireRateBeam
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114597142282982312, guid: 46f221d71665450419bece3bcfdaa6c8,
-        type: 2}
-      propertyPath: _gfxObject
-      value: 
-      objectReference: {fileID: 49659343}
-    - target: {fileID: 114597142282982312, guid: 46f221d71665450419bece3bcfdaa6c8,
-        type: 2}
-      propertyPath: gunTip
-      value: 
-      objectReference: {fileID: 48769832}
-    - target: {fileID: 114597142282982312, guid: 46f221d71665450419bece3bcfdaa6c8,
-        type: 2}
-      propertyPath: bullet
-      value: 
-      objectReference: {fileID: 1880808093566080, guid: 0a1af5ebedc3989408e4334b302059da,
-        type: 2}
-    - target: {fileID: 114597142282982312, guid: 46f221d71665450419bece3bcfdaa6c8,
-        type: 2}
-      propertyPath: beam
-      value: 
-      objectReference: {fileID: 1654542968207190, guid: 6232e0e93af0bc542a617b06a64ad751,
-        type: 2}
-    - target: {fileID: 114597142282982312, guid: 46f221d71665450419bece3bcfdaa6c8,
-        type: 2}
-      propertyPath: pivotGunTip
-      value: 
-      objectReference: {fileID: 108228019}
-    - target: {fileID: 114293326522138546, guid: 46f221d71665450419bece3bcfdaa6c8,
-        type: 2}
-      propertyPath: playerHealthSlider
-      value: 
-      objectReference: {fileID: 735506282}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 46f221d71665450419bece3bcfdaa6c8, type: 2}
   m_IsPrefabParent: 0
@@ -1681,28 +1514,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 58d2f617e9566074d809f70ef30eb805, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &946134454 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1492526090448090, guid: 46f221d71665450419bece3bcfdaa6c8,
-    type: 2}
-  m_PrefabInternal: {fileID: 720219725}
---- !u!95 &946134455
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 946134454}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 796cb3fb100a7e84bafb1739c4ea2475, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1015834261
 GameObject:
   m_ObjectHideFlags: 0
@@ -3015,7 +2826,7 @@ GameObject:
   - component: {fileID: 2038586757}
   - component: {fileID: 2038586760}
   - component: {fileID: 2038586761}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: DeadBush
   m_TagString: ShootTable
   m_Icon: {fileID: 0}
