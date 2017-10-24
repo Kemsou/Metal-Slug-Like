@@ -5,19 +5,22 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour {
 
-    public float maxHealth;
+    [SerializeField]
+    float maxHealth;
 
     float currentHealth;
 
-    public GameObject bloodEffect;
-    //public Slider playerHealthSlider;
+    [SerializeField]
+    GameObject bloodEffect;
+    [SerializeField]
+    Slider playerHealthSlider;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         currentHealth = maxHealth;
-        //playerHealthSlider.maxValue = maxHealth;
-        //playerHealthSlider.value = maxHealth;
-	}
+        playerHealthSlider.maxValue = maxHealth;
+        playerHealthSlider.value = maxHealth;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -29,7 +32,7 @@ public class PlayerHealth : MonoBehaviour {
             return;
         }
         currentHealth = currentHealth - damage;
-        //playerHealthSlider.value = currentHealth;
+        playerHealthSlider.value = currentHealth;
         if (currentHealth <= 0) {
             makeDead();
         }

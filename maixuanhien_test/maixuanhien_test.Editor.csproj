@@ -139,6 +139,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Galaxia Sprite Pack #1\README.txt" />
+    <None Include="Assets\Tiled2Unity\Imported\Level_Tuto.tiled2unity.xml" />
     <None Include="Assets\Tiled2Unity\Imported\Niveau_Clement.tiled2unity.xml" />
     <None Include="Assets\Tiled2Unity\Imported\_ReadMe.txt" />
     <None Include="Assets\Tiled2Unity\License.txt" />
