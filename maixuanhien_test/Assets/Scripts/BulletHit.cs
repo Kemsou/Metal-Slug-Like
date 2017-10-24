@@ -23,25 +23,60 @@ public class BulletHit : MonoBehaviour {
     }
 
     void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.gameObject.tag == "ShootTable" && !collision.gameObject.transform.parent.GetComponent<EnemyController>().isBerserk) {
-            proCon.removeForce();
-            Instantiate(bulletExplosion, transform.position, transform.rotation);
-            Destroy(gameObject);
+        if (collision.gameObject.tag == "ShootTable") {
+            bool destroy = false;
             if (collision.gameObject.layer == LayerMask.NameToLayer("enemy")) {
-                EnemyController hurtEnemy = collision.gameObject.GetComponentInParent<EnemyController>();
+                if (!collision.gameObject.transform.parent.GetComponent<EnemyController>().isBerserk)
+                {
+                    destroy = true;
+                    EnemyController hurtEnemy;
+                    hurtEnemy = collision.gameObject.GetComponentInParent<EnemyController>();
+                    hurtEnemy.addDamage(weaponDamage);
+                }
+            } else if (collision.gameObject.layer == LayerMask.NameToLayer("destructible"))
+            {
+                destroy = true;
+                EnemyHealth hurtEnemy;
+                hurtEnemy = collision.gameObject.GetComponent<EnemyHealth>();
                 hurtEnemy.addDamage(weaponDamage);
+            }
+            
+            if (destroy)
+            {
+                proCon.removeForce();
+                Instantiate(bulletExplosion, transform.position, transform.rotation);
+                Destroy(gameObject);
             }
         }
     }
 
     private void OnTriggerStay2D(Collider2D collision) {
-        if (collision.gameObject.tag == "ShootTable" && !collision.gameObject.transform.parent.GetComponent<EnemyController>().isBerserk) {
-            proCon.removeForce();
-            Instantiate(bulletExplosion, transform.position, transform.rotation);
-            Destroy(gameObject);
-            if (collision.gameObject.layer == LayerMask.NameToLayer("enemy")) {
-                EnemyController hurtEnemy = collision.gameObject.GetComponentInParent<EnemyController>();
+        if (collision.gameObject.tag == "ShootTable")
+        {
+            bool destroy = false;
+            if (collision.gameObject.layer == LayerMask.NameToLayer("enemy"))
+            {
+                if (!collision.gameObject.transform.parent.GetComponent<EnemyController>().isBerserk)
+                {
+                    destroy = true;
+                    EnemyController hurtEnemy;
+                    hurtEnemy = collision.gameObject.GetComponentInParent<EnemyController>();
+                    hurtEnemy.addDamage(weaponDamage);
+                }
+            }
+            else if (collision.gameObject.layer == LayerMask.NameToLayer("destructible"))
+            {
+                destroy = true;
+                EnemyHealth hurtEnemy;
+                hurtEnemy = collision.gameObject.GetComponent<EnemyHealth>();
                 hurtEnemy.addDamage(weaponDamage);
+            }
+
+            if (destroy)
+            {
+                proCon.removeForce();
+                Instantiate(bulletExplosion, transform.position, transform.rotation);
+                Destroy(gameObject);
             }
         }
     }
