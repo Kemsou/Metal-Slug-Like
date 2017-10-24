@@ -115,6 +115,11 @@
    <object id="1" x="0" y="0" width="70" height="39.8182"/>
   </objectgroup>
  </tile>
+ <tile id="127">
+  <objectgroup draworder="index">
+   <object id="1" x="0" y="0" width="70" height="70"/>
+  </objectgroup>
+ </tile>
  <tile id="130">
   <objectgroup draworder="index">
    <object id="1" x="0" y="0" width="70" height="70"/>
