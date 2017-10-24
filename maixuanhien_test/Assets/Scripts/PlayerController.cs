@@ -91,9 +91,7 @@ public class PlayerController : MonoBehaviour
         {
             charBody.velocity = Vector2.zero;
         }
-
-
-
+        
         charAnimation.SetFloat("speed", Mathf.Abs(inputHorizontal));
 
         if (Input.GetButtonDown("Jump"))
@@ -113,8 +111,7 @@ public class PlayerController : MonoBehaviour
             }
 
         }
-
-        //chuc nang ban tu ban phim
+        
         if ((!manette && Input.GetAxis("Fire1") > 0) || (manette && Input.GetAxis("Trigger") > 0.5))
         {
             fireBullet();
@@ -125,12 +122,10 @@ public class PlayerController : MonoBehaviour
             fireBeam();
         }
     }
-
-    //xoay huong mat character
+    
     void changeOrientation(float inputHorizontal, float inputVertical)
     {
         Transform child = transform.GetChild(0);
-
         if (inputHorizontal == 1 && inputVertical == 1)
         {
             rotation = Quaternion.Euler(new Vector3(0, 0, 45));
