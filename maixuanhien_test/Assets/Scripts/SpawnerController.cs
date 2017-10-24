@@ -61,11 +61,13 @@ public class SpawnerController : MonoBehaviour {
         if (collision.gameObject.tag == "Player" && currentWave == 0)
         {
             TriggerSpawner();
+            Debug.Log("trigger");
         }
     }
 
     void TriggerSpawner()
     {
+        Debug.Log("trigger");
         currentWave = 1;
         timer = 0;
     }
