@@ -17,6 +17,10 @@ public class PlayerController : MonoBehaviour {
     [SerializeField]
     public bool grounded;
     bool doublejump;
+    [SerializeField]
+    private bool manette;
+    private float inputHorizontal;
+    private float inputVertical;
 
 
 
@@ -40,6 +44,9 @@ public class PlayerController : MonoBehaviour {
         charAnimation = _gfxObject.GetComponent<Animator>();
         facingRight = true;
         rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+        
+        inputHorizontal = 0;
+        inputVertical = 0;
     }
 
     // Update is called once per frame
@@ -50,12 +57,23 @@ public class PlayerController : MonoBehaviour {
     //FixedUpdate la doi tuong chiu tac dung vat ly
 
     private void FixedUpdate() {
-        float inputHorizontal = Input.GetAxisRaw("Horizontal");
-        float inputVertical = Input.GetAxisRaw("Vertical");
+
+        /*if (manette)
+        {
+            inputHorizontal = Input.GetAxisRaw("Horizontal");
+            inputVertical = Input.GetAxisRaw("Vertical");
+            changeOrientation(inputHorizontal, inputVertical);
+        }
+        else
+        {*/
+            inputHorizontal = Input.GetAxisRaw("Horizontal");
+            inputVertical = Input.GetAxisRaw("Vertical");
+            changeOrientation(inputHorizontal, inputVertical);
+        //}
+        
         if ((facingRight && inputHorizontal == -1) || (!facingRight && inputHorizontal == 1))
             flip();
-        Vector2 vecDirection = new Vector2(inputHorizontal, inputVertical);
-        changeOrientation(inputHorizontal, inputVertical);
+        
 
         charBody.velocity = new Vector2(inputHorizontal * maxSpeed, charBody.velocity.y);
 
@@ -151,10 +169,11 @@ public class PlayerController : MonoBehaviour {
 
         RaycastHit2D hit = Physics2D.Raycast(raycastOrigine, raycastDirection, 0.3f, LayerMask.GetMask("world"));
         if (hit.collider != null && hit.collider.tag == "Ground")
-        {
+        { 
             onGround = true;
             doublejump = true;
         }
+        Debug.DrawRay(raycastOrigine, raycastDirection, Color.green, 0.3f);
 
         return onGround;
     }
