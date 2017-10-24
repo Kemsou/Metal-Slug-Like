@@ -77,8 +77,12 @@ public class PlayerController : MonoBehaviour {
         } else {
             charBody.velocity = Vector2.zero;
         }
+<<<<<<< HEAD
 
 
+=======
+        
+>>>>>>> master
         charAnimation.SetFloat("speed", Mathf.Abs(inputHorizontal));
 
         if (Input.GetButtonDown("Jump")) {
@@ -93,9 +97,15 @@ public class PlayerController : MonoBehaviour {
             }
 
         }
+<<<<<<< HEAD
 
         if ((!manette && Input.GetAxis("Fire1") > 0) || (manette && Input.GetAxis("Trigger") > 0.5)) {
             nextFireBeam = Time.time + fireRateBullet;
+=======
+        
+        if ((!manette && Input.GetAxis("Fire1") > 0) || (manette && Input.GetAxis("Trigger") > 0.5))
+        {
+>>>>>>> master
             fireBullet();
         }
 
@@ -104,11 +114,20 @@ public class PlayerController : MonoBehaviour {
             fireBeam();
         }
     }
+<<<<<<< HEAD
 
     void changeOrientation(float inputHorizontal, float inputVertical) {
         Transform child = transform.GetChild(0);
 
         if (inputHorizontal == 1 && inputVertical == 1) {
+=======
+    
+    void changeOrientation(float inputHorizontal, float inputVertical)
+    {
+        Transform child = transform.GetChild(0);
+        if (inputHorizontal == 1 && inputVertical == 1)
+        {
+>>>>>>> master
             rotation = Quaternion.Euler(new Vector3(0, 0, 45));
         }
         if (inputHorizontal == 1 && inputVertical == 0) {

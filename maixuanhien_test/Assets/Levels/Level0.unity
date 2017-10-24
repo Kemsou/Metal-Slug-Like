@@ -1277,7 +1277,7 @@ Prefab:
     - target: {fileID: 114597142282982312, guid: 46f221d71665450419bece3bcfdaa6c8,
         type: 2}
       propertyPath: manette
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 61235066092680046, guid: 46f221d71665450419bece3bcfdaa6c8,
         type: 2}
@@ -1307,7 +1307,7 @@ Prefab:
     - target: {fileID: 114597142282982312, guid: 46f221d71665450419bece3bcfdaa6c8,
         type: 2}
       propertyPath: fireRateBullet
-      value: 0.5
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 114597142282982312, guid: 46f221d71665450419bece3bcfdaa6c8,
         type: 2}
