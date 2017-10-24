@@ -1178,6 +1178,26 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114597142282982312, guid: 46f221d71665450419bece3bcfdaa6c8,
+        type: 2}
+      propertyPath: manette
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61235066092680046, guid: 46f221d71665450419bece3bcfdaa6c8,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 61235066092680046, guid: 46f221d71665450419bece3bcfdaa6c8,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 61235066092680046, guid: 46f221d71665450419bece3bcfdaa6c8,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: -0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 46f221d71665450419bece3bcfdaa6c8, type: 2}
   m_IsPrefabParent: 0
@@ -2825,7 +2845,7 @@ GameObject:
   - component: {fileID: 2038586757}
   - component: {fileID: 2038586760}
   - component: {fileID: 2038586761}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: DeadBush
   m_TagString: ShootTable
   m_Icon: {fileID: 0}
