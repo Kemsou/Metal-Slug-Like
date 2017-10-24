@@ -77,12 +77,7 @@ public class PlayerController : MonoBehaviour {
         } else {
             charBody.velocity = Vector2.zero;
         }
-<<<<<<< HEAD
 
-
-=======
-        
->>>>>>> master
         charAnimation.SetFloat("speed", Mathf.Abs(inputHorizontal));
 
         if (Input.GetButtonDown("Jump")) {
