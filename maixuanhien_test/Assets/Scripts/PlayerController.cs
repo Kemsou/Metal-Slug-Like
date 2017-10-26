@@ -120,18 +120,12 @@ public class PlayerController : MonoBehaviour {
             fireBeam();
         }
     }
-<<<<<<< Updated upstream
+
     void changeOrientation(float inputHorizontal, float inputVertical)
     {
         Transform child = transform.GetChild(0);
         if (inputHorizontal == 1 && inputVertical == 1)
         {
-=======
-
-    void changeOrientation(float inputHorizontal, float inputVertical) {
-        Transform child = transform.GetChild(0);
-        if (inputHorizontal == 1 && inputVertical == 1) {
->>>>>>> Stashed changes
             rotation = Quaternion.Euler(new Vector3(0, 0, 45));
         }
         if (inputHorizontal == 1 && inputVertical == 0) {

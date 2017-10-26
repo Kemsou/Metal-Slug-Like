@@ -1051,6 +1051,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 478033224}
   smoothing: 5
+  minX: 4
+  maxX: 90
+  minY: -5
+  maxY: 5
 --- !u!1001 &457457089
 Prefab:
   m_ObjectHideFlags: 0
@@ -1170,6 +1174,10 @@ Prefab:
     - target: {fileID: 1983414223376590, guid: 1224ad571002670448e1857ee7e3a67c, type: 2}
       propertyPath: m_Name
       value: SpawnerEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983414223376590, guid: 1224ad571002670448e1857ee7e3a67c, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1224ad571002670448e1857ee7e3a67c, type: 2}
