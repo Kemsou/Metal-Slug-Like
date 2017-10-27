@@ -9,7 +9,7 @@ public class PlayerHealth : MonoBehaviour {
     float maxHealth;
 
     [SerializeField]
-    float currentHealth;
+    public float currentHealth;
 
     [SerializeField]
     GameObject bloodEffect;
@@ -21,7 +21,10 @@ public class PlayerHealth : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (currentHealth <= 0)
+        {
+            makeDead();
+        }
 	}
 
     public void addDamage(float damage) {
@@ -29,13 +32,12 @@ public class PlayerHealth : MonoBehaviour {
             return;
         }
         currentHealth = currentHealth - damage;
-        if (currentHealth <= 0) {
-            makeDead();
-        }
     }
 
-    void makeDead() {
+    public void makeDead() {
         Instantiate(bloodEffect, transform.position, transform.rotation);
-        gameObject.SetActive(false);
+        Destroy(gameObject);
+        GameObject spawnerPlayer = GameObject.Find("SpawnerPlayer");
+        spawnerPlayer.GetComponent<SpawnerPlayer>().SpawnPlayer();
     }
 }

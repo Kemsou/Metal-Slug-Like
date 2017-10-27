@@ -6,20 +6,34 @@ public class SpawnerPlayer : MonoBehaviour {
 
     [SerializeField]
     private GameObject character;
+    private List<Transform> checkpoints;
+    private Transform currentCheckpoint;
 
 	// Use this for initialization
 	void Start () {
-        GameObject player = Instantiate(character);
-        player.transform.position = this.transform.position;
-        GameObject camera = GameObject.Find("Main Camera");
-        if (camera != null)
+        
+
+        checkpoints = new List<Transform>();
+        foreach (Transform child in transform)
         {
-            camera.GetComponent<cameraFollow>().target = player.transform;
+            checkpoints.Add(child);
         }
+        currentCheckpoint = this.transform;
+        currentCheckpoint.GetComponent<Checkpoint>().SpawnPlayer(character);
     }
 	
 	// Update is called once per frame
 	void Update () {
 
 	}
+
+    public void SpawnPlayer()
+    {
+        currentCheckpoint.GetComponent<Checkpoint>().SpawnPlayer(character);
+    }
+
+    public void ChangeCheckpoint(Transform checkpoint)
+    {
+        currentCheckpoint = checkpoint;
+    }
 }

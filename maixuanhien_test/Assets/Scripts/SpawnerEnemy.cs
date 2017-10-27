@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnerTrigger : MonoBehaviour {
+public class SpawnerEnemy : MonoBehaviour {
 
     private bool actif;
     private List<Transform> waves;
@@ -10,7 +10,6 @@ public class SpawnerTrigger : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         waves = new List<Transform>();
-        List<Transform> wavesInversees = new List<Transform>();
         foreach(Transform child in transform)
         {
             waves.Add(child);
