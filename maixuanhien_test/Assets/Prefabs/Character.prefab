@@ -54,8 +54,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4214448638103668}
-  - component: {fileID: 95236745052645708}
   - component: {fileID: 212337312388814590}
+  - component: {fileID: 95236745052645708}
   - component: {fileID: 114661694972474882}
   m_Layer: 0
   m_Name: GFX
@@ -228,6 +228,9 @@ MonoBehaviour:
   currentHealth: 0
   bloodEffect: {fileID: 1383413108144262, guid: 39d11c3b81870d1459999f1f997c1731,
     type: 2}
+  frameInvincible: 2
+  delay: 8
+  mySpriteRenderer: {fileID: 1528651988979424}
 --- !u!114 &114597142282982312
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -51,6 +51,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Armor.cs" />
+     <Compile Include="Assets\Scripts\ArmorUI.cs" />
      <Compile Include="Assets\Scripts\BulletBomerController.cs" />
      <Compile Include="Assets\Scripts\BulletBomerHit.cs" />
      <Compile Include="Assets\Scripts\BulletHit.cs" />

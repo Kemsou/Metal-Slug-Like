@@ -27,6 +27,9 @@ public class Checkpoint : MonoBehaviour {
         {
             camera.GetComponent<cameraFollow>().target = player.transform;
         }
+
+        GameObject.Find("playerHUDCanvas/playerArmorUI").GetComponent<ArmorUI>().character = player;
+        GameObject.Find("playerHUDCanvas/playerArmorUI").GetComponent<ArmorUI>().UpdateAmorUI();
     }
 
     void OnTriggerEnter2D(Collider2D collider)

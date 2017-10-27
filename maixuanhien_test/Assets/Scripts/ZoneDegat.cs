@@ -5,7 +5,7 @@ using UnityEngine;
 public class ZoneDegat : MonoBehaviour {
 
     [SerializeField]
-    private float damage;
+    private int damage;
     private float damageRate = 0.5f;
     private float nextDamage;
 
