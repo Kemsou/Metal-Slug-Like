@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour {
 
-    public float damage;
+    public int damage;
     float damageRate = 0.5f;
     public float pushBackForce;
     float nextDamage;

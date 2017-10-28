@@ -7,7 +7,7 @@ public class BulletBomerHit : MonoBehaviour {
     [SerializeField]
     GameObject bulletBomerExplosion;
     [SerializeField]
-    float damage;
+    int damage;
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if(collision.gameObject.tag == "Player") {

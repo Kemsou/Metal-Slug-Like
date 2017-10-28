@@ -13,7 +13,7 @@ public class EnemyController : MonoBehaviour {
     [SerializeField]
     protected bool berserk = false;
 
-    protected float currentShield;
+    private float currentShield;
 
     [SerializeField]
     protected float maxShield;
@@ -40,6 +40,19 @@ public class EnemyController : MonoBehaviour {
         }
     }
 
+    public float CurrentShield
+    {
+        get
+        {
+            return currentShield;
+        }
+
+        set
+        {
+            currentShield = value;
+        }
+    }
+
     private void Awake() {
         enemyBody = GetComponent<Rigidbody2D>();
         enemyAnimator = _gfxObject.GetComponentInChildren<Animator>();
@@ -47,7 +60,7 @@ public class EnemyController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        currentShield = maxShield;
+        CurrentShield = maxShield;
         enemyShieldSlider.maxValue = maxShield;
         enemyShieldSlider.value = maxShield;
     }
@@ -72,15 +85,15 @@ public class EnemyController : MonoBehaviour {
 
     public void addDamage(float damage)
     {
-        if (currentShield > 0)
+        if (CurrentShield > 0)
         {
-            currentShield = currentShield - damage;
-            if (currentShield <= 0)
+            CurrentShield = CurrentShield - damage;
+            if (CurrentShield <= 0)
             {
-                currentShield = 0;
+                CurrentShield = 0;
                 makeBerserk();
             }
-            enemyShieldSlider.value = currentShield;
+            enemyShieldSlider.value = CurrentShield;
         }
     }
 

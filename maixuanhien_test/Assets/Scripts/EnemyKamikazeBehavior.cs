@@ -3,14 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyKamikazeBehavior : EnemyController {
-
-    // Use this for initialization
-    /*void Start () {
-        currentShield = maxShield;
-        enemyShieldSlider.maxValue = maxShield;
-        enemyShieldSlider.value = maxShield;
-        Debug.Log("currentShield : " + currentShield);
-    }*/
+    
 
     // Update is called once per frame
     void Update() {

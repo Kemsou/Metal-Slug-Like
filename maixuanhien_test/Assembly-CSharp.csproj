@@ -51,10 +51,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Armor.cs" />
+     <Compile Include="Assets\Scripts\ArmorUI.cs" />
      <Compile Include="Assets\Scripts\BulletBomerController.cs" />
      <Compile Include="Assets\Scripts\BulletBomerHit.cs" />
      <Compile Include="Assets\Scripts\BulletHit.cs" />
      <Compile Include="Assets\Scripts\cameraFollow.cs" />
+     <Compile Include="Assets\Scripts\Checkpoint.cs" />
      <Compile Include="Assets\Scripts\DestroyMe.cs" />
      <Compile Include="Assets\Scripts\EnemyBomer.cs" />
      <Compile Include="Assets\Scripts\EnemyController.cs" />
@@ -67,7 +70,11 @@
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\PlayerHealth.cs" />
      <Compile Include="Assets\Scripts\ProjectileControler.cs" />
-     <Compile Include="Assets\Scripts\SpawnerController.cs" />
+     <Compile Include="Assets\Scripts\SpawnerEnemy.cs" />
+     <Compile Include="Assets\Scripts\SpawnerPlayer.cs" />
+     <Compile Include="Assets\Scripts\Visible.cs" />
+     <Compile Include="Assets\Scripts\WaveEnemyController.cs" />
+     <Compile Include="Assets\Scripts\ZoneDegat.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\CircleObject.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\GameObjectExtensions.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\GPUInstancing.cs" />

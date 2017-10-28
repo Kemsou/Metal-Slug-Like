@@ -120,6 +120,7 @@ public class PlayerController : MonoBehaviour {
             fireBeam();
         }
     }
+
     void changeOrientation(float inputHorizontal, float inputVertical)
     {
         Transform child = transform.GetChild(0);
@@ -210,4 +211,6 @@ public class PlayerController : MonoBehaviour {
     private bool IsGrounded() {
         return _grounds.Count > 0;
     }
+
+    
 }
