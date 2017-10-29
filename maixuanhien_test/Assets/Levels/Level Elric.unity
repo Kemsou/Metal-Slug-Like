@@ -423,17 +423,27 @@ Prefab:
       propertyPath: m_UsedByEffector
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 60920233102720516, guid: de78ce60f9115a14b8f265b8562bc168,
+        type: 2}
+      propertyPath: m_UsedByEffector
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 60906148183457732, guid: de78ce60f9115a14b8f265b8562bc168,
+        type: 2}
+      propertyPath: m_UsedByEffector
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: de78ce60f9115a14b8f265b8562bc168, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &95126204 stripped
 GameObject:
-  m_PrefabParentObject: {fileID: 1680231076281860, guid: de78ce60f9115a14b8f265b8562bc168,
+  m_PrefabParentObject: {fileID: 1534524690039710, guid: de78ce60f9115a14b8f265b8562bc168,
     type: 2}
   m_PrefabInternal: {fileID: 95126203}
 --- !u!1 &95126205 stripped
 GameObject:
-  m_PrefabParentObject: {fileID: 1924903670240022, guid: de78ce60f9115a14b8f265b8562bc168,
+  m_PrefabParentObject: {fileID: 1228104104622258, guid: de78ce60f9115a14b8f265b8562bc168,
     type: 2}
   m_PrefabInternal: {fileID: 95126203}
 --- !u!1 &95126206 stripped
@@ -441,12 +451,7 @@ GameObject:
   m_PrefabParentObject: {fileID: 1061746388562236, guid: de78ce60f9115a14b8f265b8562bc168,
     type: 2}
   m_PrefabInternal: {fileID: 95126203}
---- !u!1 &95126207 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1568446902704612, guid: de78ce60f9115a14b8f265b8562bc168,
-    type: 2}
-  m_PrefabInternal: {fileID: 95126203}
---- !u!251 &95126208
+--- !u!251 &95126207
 PlatformEffector2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -464,7 +469,7 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
---- !u!251 &95126209
+--- !u!251 &95126208
 PlatformEffector2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -495,24 +500,6 @@ PlatformEffector2D:
     m_Bits: 4294967295
   m_RotationalOffset: 0
   m_UseOneWay: 1
-  m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
-  m_UseSideFriction: 0
-  m_UseSideBounce: 0
-  m_SideArc: 1
---- !u!251 &95126211
-PlatformEffector2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 95126207}
-  m_Enabled: 1
-  m_UseColliderMask: 1
-  m_ColliderMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RotationalOffset: 0
-  m_UseOneWay: 0
   m_UseOneWayGrouping: 0
   m_SurfaceArc: 180
   m_UseSideFriction: 0
@@ -2467,12 +2454,17 @@ Prefab:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 60206797096416196, guid: a9969a60aa244e44884e614c77259be1,
+        type: 2}
+      propertyPath: m_UsedByEffector
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a9969a60aa244e44884e614c77259be1, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1111896483 stripped
 GameObject:
-  m_PrefabParentObject: {fileID: 1505921324281264, guid: a9969a60aa244e44884e614c77259be1,
+  m_PrefabParentObject: {fileID: 1908616335013258, guid: a9969a60aa244e44884e614c77259be1,
     type: 2}
   m_PrefabInternal: {fileID: 1111896482}
 --- !u!251 &1111896484
@@ -2823,9 +2815,37 @@ Prefab:
       propertyPath: m_UsedByEffector
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 60348703594230050, guid: 46c28c0f6f4bbcd4caa29ecac3799d2f,
+        type: 2}
+      propertyPath: m_UsedByEffector
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 46c28c0f6f4bbcd4caa29ecac3799d2f, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1294479295 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1338570736883728, guid: 46c28c0f6f4bbcd4caa29ecac3799d2f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1294479294}
+--- !u!251 &1294479296
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1294479295}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1001 &1294795900
 Prefab:
   m_ObjectHideFlags: 0
@@ -4088,29 +4108,6 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224982151742819806, guid: c87696859d5f44547898e50826889ed8,
     type: 2}
   m_PrefabInternal: {fileID: 1161494976}
---- !u!1 &2101441379 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1029590267263538, guid: 46c28c0f6f4bbcd4caa29ecac3799d2f,
-    type: 2}
-  m_PrefabInternal: {fileID: 1294479294}
---- !u!251 &2101441382
-PlatformEffector2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2101441379}
-  m_Enabled: 1
-  m_UseColliderMask: 1
-  m_ColliderMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RotationalOffset: 0
-  m_UseOneWay: 0
-  m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
-  m_UseSideFriction: 0
-  m_UseSideBounce: 0
-  m_SideArc: 1
 --- !u!1001 &2147330178
 Prefab:
   m_ObjectHideFlags: 0
