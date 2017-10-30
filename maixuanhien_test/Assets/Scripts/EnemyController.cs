@@ -4,12 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class EnemyController : MonoBehaviour {
-
-    [SerializeField]
-    protected float speed;
-    [SerializeField]
-    protected float speedBerserk;
-
+    
     [SerializeField]
     protected bool berserk = false;
 
@@ -91,7 +86,6 @@ public class EnemyController : MonoBehaviour {
 
     protected void makeBerserk() {
         berserk = true;
-        speed = speedBerserk;
         enemyShieldSlider.gameObject.SetActive(false);
     }
 
