@@ -26,7 +26,9 @@ public class PlayerController : MonoBehaviour {
     public Transform pivotGunTip;
     public GameObject bullet;
     public GameObject beam;
+    [SerializeField]
     private bool hasGunShieldBreaker;
+    [SerializeField]
     private bool hasGunBeam;
     [SerializeField]
     private float durationBeam;
