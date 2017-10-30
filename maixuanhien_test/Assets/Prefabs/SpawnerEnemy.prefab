@@ -50,14 +50,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1983414223376590}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -160.78, y: 10.94, z: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 80.47327, y: -2.3526382, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4644270736569034}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &4644270736569034
 Transform:
   m_ObjectHideFlags: 1
@@ -83,7 +83,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -14.2, y: -4.23}
+  m_Offset: {x: 14.2, y: -4.23}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -121,9 +121,9 @@ MonoBehaviour:
   spawner:
   - stringArray:
     - 1
-    - shooter
-    - 2
-  delay: 3
-  kamikaze: {fileID: 1673305870468984, guid: 0e30468882ff07b4f92ac2eb9eda947e, type: 2}
-  shooter: {fileID: 1035878667373552, guid: 52ed3f3aad629084ebbb0f8061e7e4f7, type: 2}
+    - runner
+    - 1
+  delay: 1
+  kamikaze: {fileID: 1673305870468984, guid: 2d2697c23e99681419aa730cf431ab90, type: 2}
+  shooter: {fileID: 1912080831327600, guid: aeaf7d0f3095d594a83f48b8cd4bcb0c, type: 2}
   runner: {fileID: 1673305870468984, guid: 02f51f01323ac134e88b2b9d1dcdf0ea, type: 2}
