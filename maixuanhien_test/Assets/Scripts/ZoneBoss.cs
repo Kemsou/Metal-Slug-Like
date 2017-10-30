@@ -9,14 +9,10 @@ public class ZoneBoss : MonoBehaviour {
     [SerializeField]
     private GameObject boss;
 
-	// Use this for initialization
-	void Start () {
-        headthSlider.SetActive(true);
-        boss.SetActive(true);
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if(collision.gameObject.tag == "Player") {
+            headthSlider.SetActive(true);
+            boss.SetActive(true);
+        }
+    }
 }

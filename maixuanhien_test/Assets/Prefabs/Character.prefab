@@ -224,7 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f98ed12b251d4b4aa4894af6293ab07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 1
   currentHealth: 0
   bloodEffect: {fileID: 1383413108144262, guid: 39d11c3b81870d1459999f1f997c1731,
     type: 2}
@@ -253,8 +253,8 @@ MonoBehaviour:
   pivotGunTip: {fileID: 4686542463537574}
   bullet: {fileID: 1880808093566080, guid: 0a1af5ebedc3989408e4334b302059da, type: 2}
   beam: {fileID: 1654542968207190, guid: 6232e0e93af0bc542a617b06a64ad751, type: 2}
-  hasGunShieldBreaker: 0
-  hasGunBeam: 0
+  hasGunShieldBreaker: 1
+  hasGunBeam: 1
   durationBeam: 1
 --- !u!114 &114661694972474882
 MonoBehaviour:
