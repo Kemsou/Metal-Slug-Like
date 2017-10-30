@@ -3,11 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyKamikazeBehavior : EnemyController {
-    
+
+    [SerializeField]
+    protected float speed;
+    [SerializeField]
+    protected float speedBerserk;
 
     // Update is called once per frame
     void Update() {
-
+        if (berserk)
+        {
+            speed = speedBerserk;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {

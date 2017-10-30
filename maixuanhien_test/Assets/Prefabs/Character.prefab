@@ -248,7 +248,7 @@ MonoBehaviour:
   fireRateBeam: 2
   _gfxObject: {fileID: 1528651988979424}
   facingRight: 0
-  manette: 1
+  manette: 0
   gunTip: {fileID: 4313082864964146}
   pivotGunTip: {fileID: 4686542463537574}
   bullet: {fileID: 1880808093566080, guid: 0a1af5ebedc3989408e4334b302059da, type: 2}
