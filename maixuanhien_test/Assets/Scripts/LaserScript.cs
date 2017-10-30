@@ -75,6 +75,8 @@ public class LaserScript : MonoBehaviour
         if (coll.gameObject.tag == "ShootTable" && coll.gameObject.layer == LayerMask.NameToLayer("enemy") && coll.transform.parent.GetComponent<EnemyController>().isBerserk)
         {
             coll.transform.parent.GetComponent<EnemyController>().makeDead();
+        }else if(coll.gameObject.tag == "ShootTable" && coll.gameObject.layer == LayerMask.NameToLayer("boss")) {
+            coll.transform.parent.parent.parent.GetComponent<EnemyHealth>().makeDead();
         }
     }
 }

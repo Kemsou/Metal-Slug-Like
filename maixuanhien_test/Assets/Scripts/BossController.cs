@@ -8,26 +8,49 @@ public class BossController : MonoBehaviour {
     private Transform pointLazer;
     [SerializeField]
     private GameObject lazer;
+    [SerializeField]
+    private GameObject gfx;
 
     private Transform player;
+    private Animator aniBoss;
+    private Rigidbody2D bossBody;
 
-    float attackRate = 2f;
-    float nextAttack = 0;
+    private float attackRate = 3f;
+    private float nextAttack = 0;
     private bool playerInSight = false;
+    private float timePhrase = 0; // 25 - 30 - 55 - 60 - 70
+    private float minX;
+    private float maxX;
+    private float currentX;
 
     // Use this for initialization
     void Start() {
-
-    }
-
-    // Update is called once per frame
-    void Update() {
-
+        aniBoss = gfx.GetComponent<Animator>();
+        bossBody = GetComponent<Rigidbody2D>();
+        currentX = transform.localPosition.x;
+        minX = currentX - 15;
+        maxX = currentX;
     }
 
     private void FixedUpdate() {
         if (playerInSight == true) {
             attack();
+        }
+        timePhrase = Time.time%70;
+        aniBoss.SetFloat("time", timePhrase);
+        currentX = transform.localPosition.x;
+        if (timePhrase < 25) {
+            if (currentX > minX) {
+                bossBody.velocity = new Vector2(-3, bossBody.velocity.y);
+            } else {
+                bossBody.velocity = new Vector2(0, 0);
+            }
+        }else if (timePhrase > 30) {
+            if(currentX < maxX) {
+                bossBody.velocity = new Vector2(3, bossBody.velocity.y);
+            } else {
+                bossBody.velocity = new Vector2(0, 0);
+            }
         }
     }
 
