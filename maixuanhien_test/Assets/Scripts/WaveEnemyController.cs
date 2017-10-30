@@ -17,6 +17,10 @@ public class WaveEnemyController : MonoBehaviour {
     private float delay;
     [SerializeField]
     private GameObject kamikaze;
+    [SerializeField]
+    private GameObject shooter;
+    [SerializeField]
+    private GameObject runner;
     private bool actif;
     private bool spent;
 
@@ -90,6 +94,22 @@ public class WaveEnemyController : MonoBehaviour {
                     for (int i = 0; i < Convert.ToUInt32(wave.StringArray[2]); i++)
                     {
                         GameObject enemy = Instantiate(kamikaze, transform.position, transform.rotation);
+                        enemy.transform.parent = this.transform;
+                    }
+                }
+                if (wave.StringArray[1] == "shooter")
+                {
+                    for (int i = 0; i < Convert.ToUInt32(wave.StringArray[2]); i++)
+                    {
+                        GameObject enemy = Instantiate(shooter, transform.position, transform.rotation);
+                        enemy.transform.parent = this.transform;
+                    }
+                }
+                if (wave.StringArray[1] == "runner")
+                {
+                    for (int i = 0; i < Convert.ToUInt32(wave.StringArray[2]); i++)
+                    {
+                        GameObject enemy = Instantiate(runner, transform.position, transform.rotation);
                         enemy.transform.parent = this.transform;
                     }
                 }
