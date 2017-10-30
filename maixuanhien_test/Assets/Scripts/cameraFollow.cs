@@ -17,6 +17,10 @@ public class cameraFollow : MonoBehaviour
     [SerializeField]
     private float maxY = 5;
 
+    [SerializeField]
+    private bool isLocked = false;
+
+
     float offset;
 
     // Use this for initialization
@@ -38,34 +42,67 @@ public class cameraFollow : MonoBehaviour
     {
         if (target != null)
         {
-            Vector3 targetCameraPosition = new Vector3(target.position.x, target.position.y, transform.position.z);
-            Vector3 newPos = targetCameraPosition;
-
-            if (targetCameraPosition.x < minX)
+            if (!isLocked)
             {
-                newPos.x = minX;
-            }
+                Vector3 targetCameraPosition = new Vector3(target.position.x, target.position.y, transform.position.z);
+                Vector3 newPos = targetCameraPosition;
 
-            if (targetCameraPosition.x > maxX)
+                if (targetCameraPosition.x < minX)
+                {
+                    newPos.x = minX;
+                }
+
+                if (targetCameraPosition.x > maxX)
+                {
+                    newPos.x = maxX;
+                }
+
+                if (targetCameraPosition.y < minY)
+                {
+                    newPos.y = minY;
+                }
+
+                if (targetCameraPosition.y > maxY)
+                {
+                    newPos.y = maxY;
+                }
+
+
+                //transform.position = Vector3.Lerp(transform.position, newPos, smoothing * Time.deltaTime);
+                transform.position = newPos;
+            }
+        }
+        checkIfInsideCameraBox();
+    }
+
+    public void lockCamera()
+    {
+        this.isLocked = true;
+    }
+
+    public void unlockCamera()
+    {
+        this.isLocked = false;
+    }
+
+    //Check if the player is inside the camera box. If not, it changes it position to make it so or kill him if he fall.
+    private void checkIfInsideCameraBox()
+    {
+        Vector3 playerPositionCamera = Camera.main.WorldToScreenPoint(target.position);
+        if (target != null)
+        {
+            if(playerPositionCamera.x < 0)
             {
-                newPos.x = maxX;
-            }
-
-            if (targetCameraPosition.y < minY)
+                target.position = Camera.main.ScreenToWorldPoint(new Vector3(0, playerPositionCamera.y, playerPositionCamera.z));
+            } else if (playerPositionCamera.x > Camera.main.pixelWidth)
             {
-                newPos.y = minY;
+                target.position = Camera.main.ScreenToWorldPoint(new Vector3(Camera.main.pixelWidth, playerPositionCamera.y, playerPositionCamera.z));
             }
-
-            if (targetCameraPosition.y > maxY)
+            if(playerPositionCamera.y < 0)
             {
-                newPos.y = maxY;
+                target.GetComponent<PlayerHealth>().makeDead();
             }
-
-
-            //transform.position = Vector3.Lerp(transform.position, newPos, smoothing * Time.deltaTime);
-            transform.position = newPos;
         }
     }
 
-    
 }
