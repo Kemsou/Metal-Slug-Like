@@ -37,6 +37,11 @@ public class BulletHit : MonoBehaviour {
                 EnemyHealth hurtEnemy;
                 hurtEnemy = collision.gameObject.GetComponent<EnemyHealth>();
                 hurtEnemy.addDamage(weaponDamage);
+            } else if (collision.gameObject.layer == LayerMask.NameToLayer("boss")) {
+                destroy = true;
+                EnemyHealth hurtEnemy;
+                hurtEnemy = collision.gameObject.GetComponentInParent<EnemyHealth>();
+                hurtEnemy.addDamage(weaponDamage);
             }
 
             if (destroy) {

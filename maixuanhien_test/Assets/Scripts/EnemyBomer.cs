@@ -42,7 +42,7 @@ public class EnemyBomer : MonoBehaviour {
     void attackPlayer() {
         if (Time.time > nextAttack) {
             nextAttack = Time.time + attackRate;
-            Vector3 vectorToTarget = _player.position - attack.transform.position;
+            Vector3 vectorToTarget = _player.position - attack.position;
             float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;
             Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
    

@@ -32,23 +32,18 @@ public class EnemyController : MonoBehaviour {
     protected float nextFlip = 0f;
     protected bool canFlip = true;
 
-    public bool isBerserk
-    {
-        get
-        {
+    public bool isBerserk {
+        get {
             return berserk;
         }
     }
 
-    public float CurrentShield
-    {
-        get
-        {
+    public float CurrentShield {
+        get {
             return currentShield;
         }
 
-        set
-        {
+        set {
             currentShield = value;
         }
     }
@@ -59,19 +54,19 @@ public class EnemyController : MonoBehaviour {
     }
 
     // Use this for initialization
-    void Start () {
+    void Start() {
         CurrentShield = maxShield;
         enemyShieldSlider.maxValue = maxShield;
         enemyShieldSlider.value = maxShield;
     }
-	
-	// Update is called once per frame
-	void Update () {
-		if(Time.time > nextFlip) {
+
+    // Update is called once per frame
+    void Update() {
+        if (Time.time > nextFlip) {
             nextFlip = Time.time + facingTime;
             flip();
         }
-	}
+    }
 
     protected void flip() {
         if (!canFlip) {
@@ -83,13 +78,10 @@ public class EnemyController : MonoBehaviour {
         _gfxObject.transform.localScale = scale;
     }
 
-    public void addDamage(float damage)
-    {
-        if (CurrentShield > 0)
-        {
+    public void addDamage(float damage) {
+        if (CurrentShield > 0) {
             CurrentShield = CurrentShield - damage;
-            if (CurrentShield <= 0)
-            {
+            if (CurrentShield <= 0) {
                 CurrentShield = 0;
                 makeBerserk();
             }
@@ -97,15 +89,13 @@ public class EnemyController : MonoBehaviour {
         }
     }
 
-    protected void makeBerserk()
-    {
+    protected void makeBerserk() {
         berserk = true;
         speed = speedBerserk;
         enemyShieldSlider.gameObject.SetActive(false);
     }
 
-    public void makeDead()
-    {
+    public void makeDead() {
         Destroy(gameObject);
         Instantiate(enemyShieldEF, transform.position, transform.rotation);
     }
