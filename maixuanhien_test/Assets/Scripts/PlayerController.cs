@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour {
     GameObject _gfxObject = null;
     [SerializeField]
     public bool facingRight;
-    private List<GameObject> _grounds = new List<GameObject>();
+    private List<Collision2D> _groundCollisions = new List<Collision2D>();
 
     bool _hasDoubleJumped;
     [SerializeField]
@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour {
     public Transform pivotGunTip;
     public GameObject bullet;
     public GameObject beam;
+    private bool hasGunShieldBreaker;
+    private bool hasGunBeam;
     [SerializeField]
     private float durationBeam;
     private float timerBeam;
@@ -48,10 +50,41 @@ public class PlayerController : MonoBehaviour {
         inputHorizontal = 0;
         inputVertical = 0;
         timerBeam = 0;
+
+        hasGunShieldBreaker = false;
+        hasGunBeam = false;
     }
 
     private void FixedUpdate() {
-        bool isGrounded = IsGrounded();
+        bool isGrounded = false;
+        ContactPoint2D[] contacts;
+
+        foreach ( Collision2D coll in _groundCollisions )
+        {
+            contacts = coll.contacts;
+
+            if (contacts.Length > 0)
+            {
+                foreach (ContactPoint2D c in contacts)
+                {
+                    if (c.normal.y >= 0.5f)
+                    {
+                        isGrounded = true;
+                        break;
+                    }
+                }
+            }
+
+            if (isGrounded)
+            {
+                break;
+            }
+        }
+
+        if (isGrounded)
+        {
+            _hasDoubleJumped = false;
+        }
 
         if (manette) {
             if (Input.GetAxis("Horizontal") > 0.75)
@@ -87,9 +120,6 @@ public class PlayerController : MonoBehaviour {
             timerBeam = 0;
         }
         
-        
-
-
         if (!Input.GetButton("Stop")) {
             charBody.velocity = new Vector2(inputHorizontal * maxSpeed, charBody.velocity.y);
         } else {
@@ -161,14 +191,14 @@ public class PlayerController : MonoBehaviour {
     }
 
     void fireBullet() {
-        if (Time.time > nextFireBullet) {
+        if (Time.time > nextFireBullet && hasGunShieldBreaker) {
             nextFireBullet = Time.time + fireRateBullet;
             Instantiate(bullet, gunTip.position, pivotGunTip.rotation);
         }
     }
 
     void fireBeam() {
-        if (Time.time > nextFireBeam) {
+        if (Time.time > nextFireBeam && hasGunBeam) {
             timerBeam++;
             nextFireBeam = Time.time + fireRateBeam;
             GameObject childBeam = Instantiate(beam, gunTip.position, gunTip.rotation) as GameObject;
@@ -177,40 +207,54 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    void OnCollisionEnter2D(Collision2D coll) {
-        GameObject gO = coll.gameObject;
+    void OnCollisionEnter2D(Collision2D coll)
+    {
+        if (coll.gameObject.tag == "Ground")
+        {
+            _groundCollisions.Add(coll);
+        }
 
-        if (gO.tag == "Ground") {
-            ContactPoint2D[] contacts = coll.contacts;
+        if (coll.gameObject.tag == "GunShieldBreaker")
+        {
+            hasGunShieldBreaker = true;
+            Destroy(coll.gameObject);
+        }
 
-            if (contacts.Length > 0) {
-                foreach (ContactPoint2D c in contacts) {
-                    if (c.normal.magnitude >= 0.5f) {
-                        _grounds.Add(gO);
-                        break;
-                    }
+        if (coll.gameObject.tag == "GunBeam")
+        {
+            hasGunBeam = true;
+            Destroy(coll.gameObject);
+        }
+    }
+
+    void OnCollisionStay2D(Collision2D coll)
+    {
+        if (coll.gameObject.tag == "Ground")
+        {
+            foreach (Collision2D c in _groundCollisions)
+            {
+                if (c.gameObject == coll.gameObject)
+                {
+                    _groundCollisions.Remove(c);
+                    _groundCollisions.Add(coll);
+                    break;
                 }
             }
         }
-
-        if (IsGrounded()) {
-            _hasDoubleJumped = false;
-        }
     }
 
-    void OnCollisionExit2D(Collision2D coll) {
-        if (IsGrounded()) {
-            GameObject gO = coll.gameObject;
-
-            if (_grounds.Contains(gO)) {
-                _grounds.Remove(gO);
+    void OnCollisionExit2D(Collision2D coll)
+    {
+        if (coll.gameObject.tag == "Ground")
+        {
+            foreach ( Collision2D c in _groundCollisions )
+            {
+                if (c.gameObject == coll.gameObject)
+                {
+                    _groundCollisions.Remove(c);
+                    break;
+                }
             }
         }
     }
-
-    private bool IsGrounded() {
-        return _grounds.Count > 0;
-    }
-
-    
 }

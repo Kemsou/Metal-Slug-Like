@@ -7,6 +7,7 @@ public class LaserScript : MonoBehaviour
     public GameObject _laserStart;
     public GameObject _laserMiddle;
     public GameObject _laserEnd;
+    public BoxCollider2D collider2D;
 
     private GameObject _start;
     private GameObject _middle;
@@ -32,10 +33,11 @@ public class LaserScript : MonoBehaviour
         _startWidth = _start.GetComponent<SpriteRenderer>().size.x * _start.transform.localScale.x;
         _endWidth = _end.GetComponent<SpriteRenderer>().size.x * _end.transform.localScale.x;
 
-        maxLaserSize = 40f;
+        maxLaserSize = 18f;
         currentLaserSize = 0;
 
         layer_mask  = LayerMask.GetMask("enemy");
+        collider2D = GetComponent<BoxCollider2D>();
     }
 
     void Update()
@@ -59,17 +61,20 @@ public class LaserScript : MonoBehaviour
         // End?
         _end.transform.localPosition = new Vector2(currentLaserSize, 0f);
 
-
-        // Raycast at the right
-        RaycastHit2D hit = Physics2D.Raycast(this.transform.position, this.transform.right, currentLaserSize, layer_mask);
-        if (hit.collider != null && hit.collider.transform.parent.GetComponent<EnemyController>().isBerserk)
-        {
-            hit.collider.transform.parent.GetComponent<EnemyController>().makeDead();
-        }
+        collider2D.offset = _middle.transform.localPosition;
+        collider2D.size = new Vector2(_middle.transform.localScale.x + _start.transform.localScale.x, _middle.transform.localScale.y);
     }
 
     private Vector2 GetLaserDirection()
     {
         return this.transform.parent.parent.parent.GetComponent<PlayerController>().facingRight ? Vector2.right : Vector2.left;
+    }
+
+    void OnTriggerStay2D(Collider2D coll)
+    {
+        if (coll.gameObject.tag == "ShootTable" && coll.gameObject.layer == LayerMask.NameToLayer("enemy") && coll.transform.parent.GetComponent<EnemyController>().isBerserk)
+        {
+            coll.transform.parent.GetComponent<EnemyController>().makeDead();
+        }
     }
 }

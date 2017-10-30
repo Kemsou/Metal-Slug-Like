@@ -54,9 +54,9 @@ GameObject:
   - component: {fileID: 50979679955299758}
   - component: {fileID: 61984222169736804}
   - component: {fileID: 114046553566522928}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EnemiKamikaze
-  m_TagString: Untagged
+  m_TagString: ShootTable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

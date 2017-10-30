@@ -45,6 +45,9 @@ public class PlayerHealth : MonoBehaviour {
             if (timerInvincible >= frameInvincible)
             {
                 isInvincible = false;
+                Color newColor = mySpriteRenderer.GetComponent<SpriteRenderer>().color;
+                newColor.a = 1f;
+                mySpriteRenderer.GetComponent<SpriteRenderer>().color = newColor;
             }
             else
             {
