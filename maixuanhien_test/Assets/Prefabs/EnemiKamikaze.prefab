@@ -52,9 +52,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4808468675528378}
   - component: {fileID: 50979679955299758}
-  - component: {fileID: 61984222169736804}
   - component: {fileID: 114046553566522928}
+<<<<<<< Updated upstream
   m_Layer: 8
+=======
+  - component: {fileID: 61984222169736804}
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: EnemiKamikaze
   m_TagString: ShootTable
   m_Icon: {fileID: 0}

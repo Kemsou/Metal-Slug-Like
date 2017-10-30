@@ -53,6 +53,8 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Armor.cs" />
      <Compile Include="Assets\Scripts\ArmorUI.cs" />
+     <Compile Include="Assets\Scripts\BossBehavior.cs" />
+     <Compile Include="Assets\Scripts\BossController.cs" />
      <Compile Include="Assets\Scripts\BulletBomerController.cs" />
      <Compile Include="Assets\Scripts\BulletBomerHit.cs" />
      <Compile Include="Assets\Scripts\BulletHit.cs" />
@@ -64,8 +66,10 @@
      <Compile Include="Assets\Scripts\EnemyDamage.cs" />
      <Compile Include="Assets\Scripts\EnemyHealth.cs" />
      <Compile Include="Assets\Scripts\EnemyKamikazeBehavior.cs" />
+     <Compile Include="Assets\Scripts\EnemyRunnerBehavior.cs" />
      <Compile Include="Assets\Scripts\EnemyShield.cs" />
      <Compile Include="Assets\Scripts\LaserScript.cs" />
+     <Compile Include="Assets\Scripts\LazerBossController.cs" />
      <Compile Include="Assets\Scripts\MultiDimensionalString.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\PlayerHealth.cs" />

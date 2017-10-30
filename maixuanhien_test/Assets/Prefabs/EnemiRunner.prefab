@@ -53,6 +53,7 @@ GameObject:
   - component: {fileID: 4808468675528378}
   - component: {fileID: 50979679955299758}
   - component: {fileID: 114689760697898692}
+  - component: {fileID: 61010776290459664}
   m_Layer: 0
   m_Name: EnemiRunner
   m_TagString: Untagged
@@ -137,7 +138,7 @@ Transform:
   m_GameObject: {fileID: 1455075442846584}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: -0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 224723924326084836}
   m_Father: {fileID: 4808468675528378}
@@ -150,7 +151,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1673305870468984}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -206.34, y: 8.08, z: 0}
+  m_LocalPosition: {x: -188.36, y: 4.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4080798875055572}
@@ -191,6 +192,31 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!61 &61010776290459664
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1673305870468984}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.32568645, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 35.55, y: 4}
+  m_EdgeRadius: 0
 --- !u!61 &61678230743297362
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -378,7 +404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22271699016221447a6b335b1f3fff6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 5
   speedBerserk: 10
   berserk: 0
   maxShield: 5
