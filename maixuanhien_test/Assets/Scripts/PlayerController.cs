@@ -26,7 +26,9 @@ public class PlayerController : MonoBehaviour {
     public Transform pivotGunTip;
     public GameObject bullet;
     public GameObject beam;
+    [SerializeField]
     private bool hasGunShieldBreaker;
+    [SerializeField]
     private bool hasGunBeam;
     [SerializeField]
     private float durationBeam;
@@ -40,6 +42,32 @@ public class PlayerController : MonoBehaviour {
     Rigidbody2D charBody;
     Animator charAnimation;
 
+    public bool HasGunShieldBreaker
+    {
+        get
+        {
+            return hasGunShieldBreaker;
+        }
+
+        set
+        {
+            hasGunShieldBreaker = value;
+        }
+    }
+
+    public bool HasGunBeam
+    {
+        get
+        {
+            return hasGunBeam;
+        }
+
+        set
+        {
+            hasGunBeam = value;
+        }
+    }
+
     // Use this for initialization
     void Start() {
         charBody = GetComponent<Rigidbody2D>();
@@ -50,9 +78,6 @@ public class PlayerController : MonoBehaviour {
         inputHorizontal = 0;
         inputVertical = 0;
         timerBeam = 0;
-
-        hasGunShieldBreaker = false;
-        hasGunBeam = false;
     }
 
     private void FixedUpdate() {
@@ -141,11 +166,11 @@ public class PlayerController : MonoBehaviour {
 
         }
 
-        if ((!manette && Input.GetAxis("Fire1") > 0) || (manette && Input.GetAxis("Trigger") > 0.5)) {
+        if (((!manette && Input.GetAxis("Fire1") > 0) || (manette && Input.GetAxis("Trigger") > 0.5)) && HasGunShieldBreaker) {
             fireBullet();
         }
 
-        if ((!manette && Input.GetAxis("Fire2") > 0) || (manette && Input.GetAxis("Trigger") < -0.5)) {
+        if (((!manette && Input.GetAxis("Fire2") > 0) || (manette && Input.GetAxis("Trigger") < -0.5)) && HasGunBeam) {
             nextFireBullet = Time.time + durationBeam;
             fireBeam();
         }
@@ -191,14 +216,14 @@ public class PlayerController : MonoBehaviour {
     }
 
     void fireBullet() {
-        if (Time.time > nextFireBullet && hasGunShieldBreaker) {
+        if (Time.time > nextFireBullet) {
             nextFireBullet = Time.time + fireRateBullet;
             Instantiate(bullet, gunTip.position, pivotGunTip.rotation);
         }
     }
 
     void fireBeam() {
-        if (Time.time > nextFireBeam && hasGunBeam) {
+        if (Time.time > nextFireBeam) {
             timerBeam++;
             nextFireBeam = Time.time + fireRateBeam;
             GameObject childBeam = Instantiate(beam, gunTip.position, gunTip.rotation) as GameObject;
@@ -216,13 +241,13 @@ public class PlayerController : MonoBehaviour {
 
         if (coll.gameObject.tag == "GunShieldBreaker")
         {
-            hasGunShieldBreaker = true;
+            HasGunShieldBreaker = true;
             Destroy(coll.gameObject);
         }
 
         if (coll.gameObject.tag == "GunBeam")
         {
-            hasGunBeam = true;
+            HasGunBeam = true;
             Destroy(coll.gameObject);
         }
     }

@@ -16,7 +16,7 @@ public class Checkpoint : MonoBehaviour {
 		
 	}
 
-    public void SpawnPlayer(GameObject character)
+    public GameObject SpawnPlayer(GameObject character)
     {
         GameObject camera = GameObject.Find("Main Camera");
         camera.transform.position = new Vector3(transform.position.x, transform.position.y, camera.transform.position.z);
@@ -30,6 +30,19 @@ public class Checkpoint : MonoBehaviour {
 
         GameObject.Find("playerHUDCanvas/playerArmorUI").GetComponent<ArmorUI>().character = player;
         GameObject.Find("playerHUDCanvas/playerArmorUI").GetComponent<ArmorUI>().UpdateAmorUI();
+
+        if (this.gameObject.GetComponent<SpawnerPlayer>() != null)
+        {
+            player.GetComponent<PlayerController>().HasGunBeam = false;
+            player.GetComponent<PlayerController>().HasGunShieldBreaker = false;
+        }
+        else
+        {
+            player.GetComponent<PlayerController>().HasGunBeam = true;
+            player.GetComponent<PlayerController>().HasGunShieldBreaker = true;
+        }
+
+        return player;
     }
 
     void OnTriggerEnter2D(Collider2D collider)

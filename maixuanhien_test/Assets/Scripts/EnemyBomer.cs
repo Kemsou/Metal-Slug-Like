@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBomer : MonoBehaviour {
+public class EnemyBomer : EnemyController {
     [SerializeField]
     Transform attack;
     [SerializeField]
     GameObject bullet;
     private Transform _player;
-
-    float attackRate = 1f;
+    [SerializeField]
+    private float fireRate = 1f;
+    [SerializeField]
+    private float fireRateBerserk = 0.7f;
     float nextAttack = 0;
     private bool _isPlayerInSight = false;
 
@@ -18,11 +20,10 @@ public class EnemyBomer : MonoBehaviour {
             attackPlayer();
         }
 
-        //RaycastHit hit;
-        //if (Physics.Raycast(attack.transform.position, player.transform.position, out hit, 100.0f)) {
-        //    Debug.Log("Ray");
-        //    attackPlayer(player);
-        //}
+        if (berserk)
+        {
+            fireRate = fireRateBerserk;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
@@ -41,7 +42,7 @@ public class EnemyBomer : MonoBehaviour {
 
     void attackPlayer() {
         if (Time.time > nextAttack) {
-            nextAttack = Time.time + attackRate;
+            nextAttack = Time.time + fireRate;
             Vector3 vectorToTarget = _player.position - attack.position;
             float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;
             Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
