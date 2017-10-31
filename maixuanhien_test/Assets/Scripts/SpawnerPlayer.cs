@@ -14,6 +14,9 @@ public class SpawnerPlayer : MonoBehaviour {
     private float timer = 0f;
     [SerializeField]
     private float timeBeforeSpawn = 2.0f;
+	
+	[SerializeField]
+    private bool forTest = false;
 
     void Awake()
     {
@@ -30,8 +33,9 @@ public class SpawnerPlayer : MonoBehaviour {
                 checkpoints.Add(child);
             }
             currentCheckpoint = this.transform;
-
-            currentCheckpoint.GetComponent<Checkpoint>().SpawnPlayer(character);
+			if(forTest){
+				currentCheckpoint.GetComponent<Checkpoint>().SpawnPlayer(character);
+			}
         }
     }
 
