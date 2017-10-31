@@ -22,12 +22,12 @@ public class ZoneDegat : MonoBehaviour {
         if (collision.gameObject.layer == LayerMask.NameToLayer("enemy") && nextDamage < Time.time)
         {
             
-            EnemyKamikazeBehavior kamikaze = collision.gameObject.transform.parent.GetComponent<EnemyKamikazeBehavior>();
-            kamikaze.addDamage(damage);
+            EnemyController enemy = collision.gameObject.transform.parent.GetComponent<EnemyController>();
+            enemy.addDamage(damage);
             nextDamage = damageRate + Time.time;
-            if (kamikaze.CurrentShield <= 0)
+            if (enemy.CurrentShield <= 0)
             {
-                kamikaze.makeDead();
+                enemy.makeDead();
             }
         }
     }
