@@ -359,7 +359,7 @@ MonoBehaviour:
   enemyShieldSlider: {fileID: 114153164099264238}
   _gfxObject: {fileID: 1455075442846584}
   speed: 4
-  speedBerserk: 9
+  speedBerserk: 4
 --- !u!114 &114787063282223338
 MonoBehaviour:
   m_ObjectHideFlags: 1
