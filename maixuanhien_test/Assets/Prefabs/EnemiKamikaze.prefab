@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224235780020682168}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   - component: {fileID: 4080798875055572}
   - component: {fileID: 95579637843980316}
   - component: {fileID: 212565779049399244}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,9 +54,9 @@ GameObject:
   - component: {fileID: 50979679955299758}
   - component: {fileID: 114046553566522928}
   - component: {fileID: 61984222169736804}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EnemiKamikaze
-  m_TagString: Untagged
+  m_TagString: ShootTable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 224409595640090508}
   - component: {fileID: 222974102119570160}
   - component: {fileID: 114525337491316408}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224740101847572856}
   - component: {fileID: 114153164099264238}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: enemyHealthSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 223567011422366292}
   - component: {fileID: 114508729956718574}
   - component: {fileID: 114787063282223338}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: enemyHealthCanvans
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,8 +275,8 @@ MonoBehaviour:
     type: 2}
   enemyShieldSlider: {fileID: 114153164099264238}
   _gfxObject: {fileID: 1455075442846584}
-  speed: 6
-  speedBerserk: 10
+  speed: 4
+  speedBerserk: 8
 --- !u!114 &114153164099264238
 MonoBehaviour:
   m_ObjectHideFlags: 1

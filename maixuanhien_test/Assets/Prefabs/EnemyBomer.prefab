@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 223952615196993712}
   - component: {fileID: 114861276138832030}
   - component: {fileID: 114961020405542770}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: enemyHealthCanvans
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224369985972051198}
   - component: {fileID: 114322032362352926}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: enemyHealthSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 224522133376118596}
   - component: {fileID: 222547928659999426}
   - component: {fileID: 114685831440092368}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224119960263443856}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,7 +85,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4414103715178830}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4980772593663334}
   - component: {fileID: 212273112221943784}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,9 +135,9 @@ GameObject:
   - component: {fileID: 50360869176124316}
   - component: {fileID: 114933152078645278}
   - component: {fileID: 58982806362351154}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EnemyBomer
-  m_TagString: Untagged
+  m_TagString: ShootTable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -363,8 +363,8 @@ MonoBehaviour:
   _gfxObject: {fileID: 1902108534029960}
   attack: {fileID: 4414103715178830}
   bullet: {fileID: 1908540338086070, guid: 44706018bd75e3743b697e48cea8eb23, type: 2}
-  fireRate: 1
-  fireRateBerserk: 0.7
+  fireRate: 1.5
+  fireRateBerserk: 1.2
 --- !u!114 &114961020405542770
 MonoBehaviour:
   m_ObjectHideFlags: 1

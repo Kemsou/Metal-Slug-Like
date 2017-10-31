@@ -53,9 +53,9 @@ GameObject:
   - component: {fileID: 4808468675528378}
   - component: {fileID: 50979679955299758}
   - component: {fileID: 114689760697898692}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EnemiRunnerNoShield
-  m_TagString: Untagged
+  m_TagString: ShootTable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
