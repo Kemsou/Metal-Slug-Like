@@ -404,8 +404,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22271699016221447a6b335b1f3fff6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  speedBerserk: 10
+  speed: 4
+  speedBerserk: 9
   berserk: 0
   maxShield: 5
   enemyShieldEF: {fileID: 1383413108144262, guid: 39d11c3b81870d1459999f1f997c1731,

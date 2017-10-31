@@ -101,9 +101,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4980772593663334}
   - component: {fileID: 212273112221943784}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: GFX
-  m_TagString: ShootTable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,10 +116,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4063351232094254}
-  - component: {fileID: 58932597024342184}
-  m_Layer: 0
-  m_Name: Box
-  m_TagString: Untagged
+  - component: {fileID: 58954095848281160}
+  m_Layer: 8
+  m_Name: Enemy
+  m_TagString: ShootTable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,12 +133,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4766822237459022}
   - component: {fileID: 50360869176124316}
-  - component: {fileID: 58002872602545288}
   - component: {fileID: 114933152078645278}
-  - component: {fileID: 114554765210284862}
-  m_Layer: 9
+  - component: {fileID: 58982806362351154}
+  m_Layer: 0
   m_Name: EnemyBomer
-  m_TagString: ShootTable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -176,7 +175,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1912080831327600}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8, y: 4, z: 0}
+  m_LocalPosition: {x: 4.47, y: -2.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4980772593663334}
@@ -219,12 +218,12 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!58 &58002872602545288
+--- !u!58 &58954095848281160
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1912080831327600}
+  m_GameObject: {fileID: 1906780845077902}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -234,12 +233,12 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.9
---- !u!58 &58932597024342184
+--- !u!58 &58982806362351154
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1906780845077902}
+  m_GameObject: {fileID: 1912080831327600}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -297,21 +296,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114554765210284862
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1912080831327600}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f270d815d7ee9f643acfcfd2d94e4606, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 10
-  enemyHealthEF: {fileID: 1383413108144262, guid: 39d11c3b81870d1459999f1f997c1731,
-    type: 2}
-  enemyHealthSlider: {fileID: 114322032362352926}
 --- !u!114 &114685831440092368
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -371,8 +355,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46740adb89872d948845a15bf6288e9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  berserk: 0
+  maxShield: 2
+  enemyShieldEF: {fileID: 1383413108144262, guid: 39d11c3b81870d1459999f1f997c1731,
+    type: 2}
+  enemyShieldSlider: {fileID: 114322032362352926}
+  _gfxObject: {fileID: 1902108534029960}
   attack: {fileID: 4414103715178830}
   bullet: {fileID: 1908540338086070, guid: 44706018bd75e3743b697e48cea8eb23, type: 2}
+  fireRate: 1
+  fireRateBerserk: 0.7
 --- !u!114 &114961020405542770
 MonoBehaviour:
   m_ObjectHideFlags: 1

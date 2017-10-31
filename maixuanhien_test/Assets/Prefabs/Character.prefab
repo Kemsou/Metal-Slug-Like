@@ -248,11 +248,13 @@ MonoBehaviour:
   fireRateBeam: 2
   _gfxObject: {fileID: 1528651988979424}
   facingRight: 0
-  manette: 1
+  manette: 0
   gunTip: {fileID: 4313082864964146}
   pivotGunTip: {fileID: 4686542463537574}
   bullet: {fileID: 1880808093566080, guid: 0a1af5ebedc3989408e4334b302059da, type: 2}
   beam: {fileID: 1654542968207190, guid: 6232e0e93af0bc542a617b06a64ad751, type: 2}
+  hasGunShieldBreaker: 1
+  hasGunBeam: 1
   durationBeam: 1
 --- !u!114 &114661694972474882
 MonoBehaviour:
@@ -297,7 +299,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1921016e7ad668c48b7f608278f241ba, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5029a3eb8d94df44da0007f436e62757, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
