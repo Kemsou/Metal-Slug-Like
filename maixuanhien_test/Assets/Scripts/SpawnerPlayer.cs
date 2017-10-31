@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SpawnerPlayer : MonoBehaviour {
 
@@ -8,28 +9,69 @@ public class SpawnerPlayer : MonoBehaviour {
     private GameObject character;
     private List<Transform> checkpoints;
     private Transform currentCheckpoint;
+    private static bool initialized = false;
+    private bool spawning = false;
+    private float timer = 0f;
+    [SerializeField]
+    private float timeBeforeSpawn = 2.0f;
+	
+	[SerializeField]
+    private bool forTest = false;
 
-	// Use this for initialization
-	void Start () {
-        
-
-        checkpoints = new List<Transform>();
-        foreach (Transform child in transform)
+    void Awake()
+    {
+        if(initialized)
         {
-            checkpoints.Add(child);
+            Destroy(gameObject);
+        } else
+        {
+            initialized = true;
+            DontDestroyOnLoad(gameObject);
+            checkpoints = new List<Transform>();
+            foreach (Transform child in transform)
+            {
+                checkpoints.Add(child);
+            }
+            currentCheckpoint = this.transform;
+			if(forTest){
+				currentCheckpoint.GetComponent<Checkpoint>().SpawnPlayer(character);
+			}
         }
-        currentCheckpoint = this.transform;
+    }
+
+    void OnLevelWasLoaded(int level)
+    {
         currentCheckpoint.GetComponent<Checkpoint>().SpawnPlayer(character);
+    }
+
+    // Use this for initialization
+    void Start () {
+  //      checkpoints = new List<Transform>();
+  //      foreach (Transform child in transform)
+  //      {
+  //          checkpoints.Add(child);
+  //      }
+  //      currentCheckpoint = this.transform;
+  //      currentCheckpoint.GetComponent<Checkpoint>().SpawnPlayer(character);
     }
 	
 	// Update is called once per frame
 	void Update () {
-
-	}
+        if(spawning)
+        {
+            timer += Time.deltaTime;
+            if(timer >= timeBeforeSpawn)
+            {
+                SceneManager.LoadScene("Level Elric");
+                timer = 0f;
+                spawning = false;
+            }
+        }
+    }
 
     public void SpawnPlayer()
     {
-        currentCheckpoint.GetComponent<Checkpoint>().SpawnPlayer(character);
+        spawning = true;
     }
 
     public void ChangeCheckpoint(Transform checkpoint)
