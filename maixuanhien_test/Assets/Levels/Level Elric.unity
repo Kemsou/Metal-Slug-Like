@@ -2397,7 +2397,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 409827098}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -175.93, y: 9.13, z: -15}
+  m_LocalPosition: {x: -230.1, y: 9.9, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1688723928}
@@ -5939,11 +5939,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4645596735267528, guid: 876c6ec0f0fb04e499a2ca874c2abcf6, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -178.4
+      value: -230.5
       objectReference: {fileID: 0}
     - target: {fileID: 4645596735267528, guid: 876c6ec0f0fb04e499a2ca874c2abcf6, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 6.7
+      value: 6.2
       objectReference: {fileID: 0}
     - target: {fileID: 4645596735267528, guid: 876c6ec0f0fb04e499a2ca874c2abcf6, type: 2}
       propertyPath: m_LocalPosition.z
@@ -5972,7 +5972,7 @@ Prefab:
     - target: {fileID: 114821620375840314, guid: 876c6ec0f0fb04e499a2ca874c2abcf6,
         type: 2}
       propertyPath: forTest
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 876c6ec0f0fb04e499a2ca874c2abcf6, type: 2}
@@ -6037,29 +6037,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 206006153}
   m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
---- !u!1 &1316923487 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1202289684383816, guid: a9969a60aa244e44884e614c77259be1,
-    type: 2}
-  m_PrefabInternal: {fileID: 1111896482}
---- !u!251 &1316923490
-PlatformEffector2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1316923487}
-  m_Enabled: 1
-  m_UseColliderMask: 1
-  m_ColliderMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RotationalOffset: 0
-  m_UseOneWay: 0
-  m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
-  m_UseSideFriction: 0
-  m_UseSideBounce: 0
-  m_SideArc: 1
 --- !u!1 &1318297923
 GameObject:
   m_ObjectHideFlags: 0
