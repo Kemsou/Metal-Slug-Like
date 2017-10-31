@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Levels/Level Elric.unity
+=======
+- path: Assets/Levels/MainMenu.unity
+>>>>>>> master
   isLoaded: 1
   isActive: 1
