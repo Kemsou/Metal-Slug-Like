@@ -18,7 +18,7 @@ public class cameraFollow : MonoBehaviour
     private float maxY = 5;
 
     [SerializeField]
-    private bool isLocked = false;
+    public bool isLocked = false;
 
 
     float offset;
