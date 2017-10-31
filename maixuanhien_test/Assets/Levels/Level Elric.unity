@@ -5152,7 +5152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f270d815d7ee9f643acfcfd2d94e4606, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 100
   enemyHealthEF: {fileID: 1383413108144262, guid: 39d11c3b81870d1459999f1f997c1731,
     type: 2}
   enemyHealthSlider: {fileID: 1784903468}
