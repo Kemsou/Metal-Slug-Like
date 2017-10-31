@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class SpawnerEnemy : MonoBehaviour {
 
-    private bool actif;
+    public bool actif;
     private List<Transform> waves;
+
+    [SerializeField]
+    private bool isLockingCamera;
 
 	// Use this for initialization
 	void Start () {
@@ -41,6 +44,10 @@ public class SpawnerEnemy : MonoBehaviour {
             if (waveFinished == waves.Count)
             {
                 actif = false;
+                if (isLockingCamera)
+                {
+                    Camera.main.GetComponent<cameraFollow>().isLocked = false;
+                }
             }
         }
     }
@@ -50,6 +57,10 @@ public class SpawnerEnemy : MonoBehaviour {
         if (collision.gameObject.tag == "Player" && !actif)
         {
             actif = true;
+            if (isLockingCamera)
+            {
+                Camera.main.GetComponent<cameraFollow>().isLocked = true;
+            }
         }
     }
 }
