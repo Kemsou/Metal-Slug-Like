@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Levels/MainMenu.unity
+    guid: 4a623b0e80f898f4aad3c80b63317270
+  - enabled: 1
+    path: Assets/Levels/Level Elric.unity
+    guid: 584b0caeb2cdd6a4793618aa3c1025c6
